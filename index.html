@@ -236,6 +236,11 @@ header.scrolled{box-shadow:0 6px 24px rgba(10,20,40,.10)}
 html[data-theme="dark"] .logo-tile img{filter:grayscale(1) brightness(0) invert(1) opacity(.78)}
 .logo-tile.txt{font-size:13px;font-weight:800;color:var(--muted);text-align:center;letter-spacing:.03em;line-height:1.5}
 
+.logo-wall.color .logo-tile{background:#fff;border-color:#E4E9F2}
+.logo-wall.color .logo-tile img{filter:none;border-radius:6px}
+html[data-theme="dark"] .logo-wall.color .logo-tile img{filter:none}
+.logo-wall.color .logo-tile.txt{color:#5A647A}
+
 .logo-wall.programs{grid-template-columns:repeat(4,1fr)}
 .logo-tile.ev{height:156px}
 .logo-tile.ev img{max-height:96px;max-width:86%}
@@ -575,7 +580,7 @@ footer .icon{width:16px;height:16px;margin-top:5px}
     <div class="kicker reveal" data-i="sp_k"></div>
     <h2 class="reveal" data-i="sp_h"></h2>
     <div class="tier reveal">VVIP</div>
-    <div class="logo-wall vvipw stagger">
+    <div class="logo-wall vvipw color stagger">
       <div class="logo-tile lg reveal"><img src="sponsor_logos/vvip_1.png" alt="VVIP sponsor 1"></div>
       <div class="logo-tile lg reveal"><img src="sponsor_logos/vvip_2.png" alt="VVIP sponsor 2"></div>
       <div class="logo-tile lg reveal"><img src="sponsor_logos/vvip_3.png" alt="VVIP sponsor 3"></div>
@@ -586,7 +591,7 @@ footer .icon{width:16px;height:16px;margin-top:5px}
       <div class="logo-tile lg reveal"><img src="sponsor_logos/vvip_8.png" alt="VVIP sponsor 8"></div>
     </div>
     <div class="tier vip-t reveal">VIP</div>
-    <div class="logo-wall vipw stagger">
+    <div class="logo-wall vipw color stagger">
       <div class="logo-tile sm reveal"><img src="sponsor_logos/vip_1.png" alt="VIP sponsor 1"></div>
       <div class="logo-tile sm reveal"><img src="sponsor_logos/vip_2.png" alt="VIP sponsor 2"></div>
       <div class="logo-tile sm reveal"><img src="sponsor_logos/vip_3.png" alt="VIP sponsor 3"></div>
@@ -605,7 +610,7 @@ footer .icon{width:16px;height:16px;margin-top:5px}
   <div class="wrap partners">
     <div class="kicker reveal" data-i="pt_k"></div>
     <h2 class="reveal" data-i="pt_h"></h2>
-    <div class="logo-wall stagger">
+    <div class="logo-wall color stagger">
       <div class="logo-tile reveal"><img src="partner_logos/moic.png" alt="Ministry of Industry and Commerce (MOIC)"></div>
       <div class="logo-tile reveal"><img src="partner_logos/msmepa.png" alt="MSMEPA"></div>
       <div class="logo-tile reveal"><img src="partner_logos/lncci.png" alt="LNCCI"></div>
