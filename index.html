@@ -107,11 +107,10 @@ header.scrolled{box-shadow:0 6px 24px rgba(10,20,40,.10)}
 .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.32s}.d4{animation-delay:.46s}.d5{animation-delay:.6s}
 
 .stats{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:66px 0}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
 .stat{display:flex;flex-direction:column;align-items:center;text-align:center}
-.stat .icon{width:22px;height:22px;color:var(--faint);margin-bottom:16px}
-.stat b{font-size:clamp(46px,4.6vw,68px);font-weight:800;line-height:1;color:var(--blue);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.stat b.stat-txt{font-size:clamp(24px,2.4vw,31px);line-height:1.3;letter-spacing:0;min-height:1em}
+.stat .icon{width:30px;height:30px;color:var(--blue);opacity:.85;stroke-width:1.8;margin-bottom:16px}
+.stat b{font-size:clamp(54px,5.6vw,80px);font-weight:800;line-height:1;color:var(--blue);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .stat span{font-size:14px;color:var(--muted);margin-top:14px;max-width:230px}
 
 /* ── cards ── */
@@ -270,7 +269,7 @@ footer .icon{width:16px;height:16px;margin-top:5px}
   h2{font-size:25px}
   .stat b{font-size:52px}
   .grid3,.grid2,.about-flex,.ms-flex,footer .wrap{grid-template-columns:1fr}
-  .stats .wrap{grid-template-columns:repeat(2,1fr);gap:34px 20px}
+  .stats .wrap{grid-template-columns:1fr;gap:34px}
   .videos.reels{grid-template-columns:repeat(2,1fr)}
   .logo-wall,.logo-wall.programs,.logo-wall.vvipw,.logo-wall.vipw{grid-template-columns:repeat(2,1fr)}
   .logo-tile.ev{height:120px}
@@ -368,11 +367,6 @@ footer .icon{width:16px;height:16px;margin-top:5px}
       <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
       <b class="count" data-count="50" data-prefix="+">0</b>
       <span data-i="s2"></span>
-    </div>
-    <div class="stat reveal">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg>
-      <b class="stat-txt">Lao MSME Expo</b>
-      <span data-i="s3"></span>
     </div>
     <div class="stat reveal">
       <svg class="icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
@@ -698,7 +692,7 @@ lo:{
   h1:"ເສີມພະລັງ<span class='hl-word'>ທຸລະກິດລາວ</span><br><span class='h1-sub'>ໃຫ້ເຕີບໂຕ ເຊື່ອມໂຍງ ແລະ ແຂ່ງຂັນໄດ້</span>",
   qt:"ບໍ່ມີທຸລະກິດໃດ <em class='hl'>ເຕີບໂຕໄດ້ຄົນດຽວ</em>",
   qt_sub:"ນັ້ນຄືເຫດຜົນທີ່ສະມາຄົມນີ້ມີຢູ່ — ເພື່ອໃຫ້ SME ລາວ ມີເພື່ອນຮ່ວມທາງສະເໝີ",
-  hero_p:"ສະມາຄົມສົ່ງເສີມວິສາຫະກິດຂະໜາດຈຸນລະພາກ ຂະໜາດນ້ອຍ ແລະ ຂະໜາດກາງ ແຫ່ງ ສປປ ລາວ — ສະໜັບສະໜູນ MSME ທົ່ວປະເທດໃຫ້ເຕີບໂຕ ສ້າງເຄືອຂ່າຍ ແລະ ປະສົບຜົນສຳເລັດໃນຕະຫຼາດໂລກ",
+  hero_p:"ສະມາຄົມສົ່ງເສີມຈຸນລະວິສາຫະກິດ, ວິສາຫະກິດຂະຫນາດນ້ອຍ ແລະ ກາງ ລາວ — ສະໜັບສະໜູນ MSME ທົ່ວປະເທດໃຫ້ເຕີບໂຕ ສ້າງເຄືອຂ່າຍ ແລະ ປະສົບຜົນສຳເລັດໃນຕະຫຼາດໂລກ",
   cta1:"ສະໝັກສະມາຊິກອອນລາຍ", cta2:"ກວດສຸຂະພາບທຸລະກິດຟຣີ",
   hero_note:"ໃໝ່ — ສະມາຊິກກວດສຸຂະພາບທຸລະກິດ 8 ດ້ານໄດ້ດ້ວຍຕົນເອງ ພ້ອມຮັບບົດລາຍງານແນະນຳທາງອີເມວ",
   s1:"ທຸລະກິດສະມາຊິກໃນເຄືອຂ່າຍ", s2:"ກິດຈະກຳ ແລະ ການຝຶກອົບຮົມຕໍ່ປີ", s3:"ງານໃຫຍ່ປະຈຳປີຂອງສະມາຄົມ", s4:"ຊຸດເຄື່ອງມືສຳລັບ SME",
@@ -722,7 +716,7 @@ lo:{
   ev_k:"ງານເດັ່ນຂອງສະມາຄົມ", ev_h:"ເວທີທີ່ພວກເຮົາສ້າງ <em class='hl'>ເພື່ອ SME ລາວ</em>", ev_sub:"ກິດຈະກຳຫຼັກທີ່ໝູນວຽນຕະຫຼອດປີ ເພື່ອເຊື່ອມໂຍງ ສະແດງສິນຄ້າ ແລະ ຍົກລະດັບຜູ້ປະກອບການ",
   sp_k:"ຜູ້ສະໜັບສະໜູນ", sp_h:"ຂອບໃຈ<em class='hl'>ຜູ້ສະໜັບສະໜູນ</em>ທຸກທ່ານ",
   ab_k:"ກ່ຽວກັບສະມາຄົມ", ab_h:"ຮູ້ຈັກພວກເຮົາ",
-  ab_p:"ສະມາຄົມສົ່ງເສີມວິສາຫະກິດຂະໜາດຈຸນລະພາກ ຂະໜາດນ້ອຍ ແລະ ຂະໜາດກາງ ແຫ່ງ ສປປ ລາວ ກໍ່ຕັ້ງເດືອນສິງຫາ 2020 ເພື່ອເສີມພະລັງ ແລະ ເຊື່ອມໂຍງ MSME ທົ່ວປະເທດ ພວກເຮົາມຸ່ງໝັ້ນສົ່ງເສີມຄວາມຮ່ວມມື ການພັດທະນາແບບຍືນຍົງ ແລະ ຍົກລະດັບຄວາມສາມາດແຂ່ງຂັນຂອງທຸລະກິດລາວ ທັງພາຍໃນ ແລະ ຕ່າງປະເທດ",
+  ab_p:"ສະມາຄົມສົ່ງເສີມຈຸນລະວິສາຫະກິດ, ວິສາຫະກິດຂະຫນາດນ້ອຍ ແລະ ກາງ ລາວ ກໍ່ຕັ້ງເດືອນສິງຫາ 2020 ເພື່ອເສີມພະລັງ ແລະ ເຊື່ອມໂຍງ MSME ທົ່ວປະເທດ ພວກເຮົາມຸ່ງໝັ້ນສົ່ງເສີມຄວາມຮ່ວມມື ການພັດທະນາແບບຍືນຍົງ ແລະ ຍົກລະດັບຄວາມສາມາດແຂ່ງຂັນຂອງທຸລະກິດລາວ ທັງພາຍໃນ ແລະ ຕ່າງປະເທດ",
   vi_t:"ວິໄສທັດ", vi_p:"ສ້າງລະບົບນິເວດທີ່ມີພະລັງ ເພື່ອໃຫ້ MSME ລາວກ້າວສູ່ລະດັບສາກົນ (world class)",
   mi_t:"ພາລະກິດ",
   missions:["ແລກປ່ຽນຄວາມຮູ້ ແລະ ໃຫ້ຂໍ້ມູນທີ່ຈຳເປັນແກ່ສະມາຊິກ","ຊ່ວຍສະມາຊິກເຕີບໂຕ ທັງຕະຫຼາດພາຍໃນ ແລະ ຕະຫຼາດໂລກ","ຈຸດປະກາຍການພັດທະນາຜູ້ປະກອບການໃນລາວ","ສົ່ງເສີມຄວາມຫຼາກຫຼາຍ ແລະ ການມີສ່ວນຮ່ວມ","ເປັນສູນກາງການສະໜັບສະໜູນ ແລະ ພັດທະນາທຸລະກິດ","ນຳໃຊ້ນະວັດຕະກຳ ແລະ ເຕັກໂນໂລຊີ ເພື່ອການເຕີບໂຕແບບຍືນຍົງ"],
