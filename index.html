@@ -17,15 +17,32 @@
   --blue:#1C5FC0; --blue-dark:#143F86; --ink:#16223A; --muted:#5A647A; --faint:#9AA4B8;
   --line:#E4E9F2; --bg:#F4F7FC; --card:#FFFFFF; --body:#FFFFFF; --soft:#EEF2F8;
   --green:#1F7A52; --gold:#B8770E; --red:#E12320;
+  --accent:#C8862B; --accent2:#E8A33D; 
   --hero-a:rgba(9,20,42,.92); --hero-b:rgba(28,95,192,.55);
   --shadow:0 14px 34px rgba(20,34,58,.10);
 }
 html[data-theme="dark"]{
   --blue:#5B93E8; --blue-dark:#7FAcf0; --ink:#E8EEF9; --muted:#93A3BF; --faint:#5F7191;
   --line:#1F2E47; --bg:#0B1424; --card:#121E33; --body:#0B1424; --soft:#182742;
+  --accent:#E8A33D; --accent2:#F2C063;
   --hero-a:rgba(4,10,22,.94); --hero-b:rgba(28,95,192,.38);
   --shadow:0 14px 34px rgba(0,0,0,.45);
 }
+
+.hl{font-style:normal;background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hl-word{position:relative;display:inline-block;font-size:1.12em;padding-bottom:8px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 Q 20 3 42 7 T 82 6 T 118 4' fill='none' stroke='%23E8A33D' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:bottom center;background-size:100% 11px}
+.h1-sub{font-size:.58em;font-weight:700;color:#C9D8F2;display:inline-block;margin-top:12px}
+
+.ticker{overflow:hidden;border-bottom:1px solid var(--line);background:var(--body);padding:20px 0;white-space:nowrap}
+.ticker-track{display:inline-block;will-change:transform}
+.ticker-track span{font-size:27px;font-weight:800;letter-spacing:.07em;color:transparent;-webkit-text-stroke:1.2px var(--faint);margin:0 24px;text-transform:uppercase}
+.ticker-track span.tk-fill{color:var(--blue);-webkit-text-stroke:0}
+.ticker-track i{font-style:normal;color:var(--accent);font-size:20px;vertical-align:middle}
+/* ── statement quote ── */
+.quote-sec{padding:88px 0}
+.bigquote{font-size:120px;line-height:.35;color:var(--accent);font-weight:800}
+.quote{font-size:clamp(27px,4vw,46px);font-weight:800;line-height:1.55;max-width:840px;margin:20px auto 0}
+.quote-sub{margin-top:18px;color:var(--muted);font-size:14.5px}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans Lao','Noto Sans Thai',Inter,sans-serif;color:var(--ink);background:var(--body);line-height:1.85;transition:background .3s,color .3s}
@@ -363,6 +380,12 @@ footer .icon{width:16px;height:16px;margin-top:5px}
   </div>
 </div>
 
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker-track">
+    <span class="tk-fill">Lao MSME Expo</span><i>✦</i><span>Connext</span><i>✦</i><span>Catch-up Business</span><i>✦</i><span>Pitch</span><i>✦</i><span class="tk-fill">ເຕີບໂຕໄປພ້ອມກັນ</span><i>✦</i>
+  </div>
+</div>
+
 <section id="membersys">
   <div class="wrap">
     <div class="kicker reveal" data-i="ms_k"></div>
@@ -463,6 +486,14 @@ footer .icon{width:16px;height:16px;margin-top:5px}
       </div>
       <img class="reveal" src="lm_about.jpg" alt="Lao MSME Association activity">
     </div>
+  </div>
+</section>
+
+<section class="quote-sec">
+  <div class="wrap" style="text-align:center">
+    <div class="bigquote reveal">“</div>
+    <p class="quote reveal" data-i="qt"></p>
+    <p class="quote-sub reveal" data-i="qt_sub"></p>
   </div>
 </section>
 
@@ -578,6 +609,9 @@ footer .icon{width:16px;height:16px;margin-top:5px}
     <div class="kicker reveal" data-i="pt_k"></div>
     <h2 class="reveal" data-i="pt_h"></h2>
     <div class="logo-wall stagger">
+      <div class="logo-tile reveal"><img src="partner_logos/moic.png" alt="Ministry of Industry and Commerce (MOIC)"></div>
+      <div class="logo-tile reveal"><img src="partner_logos/msmepa.png" alt="MSMEPA"></div>
+      <div class="logo-tile reveal"><img src="partner_logos/lncci.png" alt="LNCCI"></div>
       <div class="logo-tile reveal"><img src="partner_logos/giz.png" alt="GIZ"></div>
       <div class="logo-tile reveal"><img src="partner_logos/worldbank.png" alt="World Bank"></div>
       <div class="logo-tile reveal"><img src="partner_logos/adb.png" alt="Asian Development Bank"></div>
@@ -585,10 +619,9 @@ footer .icon{width:16px;height:16px;margin-top:5px}
       <div class="logo-tile reveal"><img src="partner_logos/jci.png" alt="JCI"></div>
       <div class="logo-tile reveal"><img src="partner_logos/bni.png" alt="BNI"></div>
       <div class="logo-tile reveal"><img src="partner_logos/globalshapers.png" alt="Global Shapers"></div>
-      <div class="logo-tile txt reveal">MSMEPA</div>
-      <div class="logo-tile txt reveal">LNCCI</div>
       <div class="logo-tile txt reveal">SME Service Center</div>
       <div class="logo-tile txt reveal">BAF</div>
+      <div class="logo-tile txt reveal">APDC</div>
       <div class="logo-tile txt reveal">CEO Club</div>
     </div>
   </div>
@@ -654,18 +687,20 @@ lo:{
   brand:"ສະມາຄົມສົ່ງເສີມ MSME ລາວ<small>Lao MSME Association</small>",
   n_member:"ລະບົບສະມາຊິກ", n_do:"ສິ່ງທີ່ເຮົາເຮັດ", n_about:"ກ່ຽວກັບສະມາຄົມ", n_committee:"ຄະນະບໍລິຫານ", n_news:"ຂ່າວສານ", n_partner:"ຄູ່ຮ່ວມມື", n_contact:"ຕິດຕໍ່",
   cm_k:"ຄະນະບໍລິຫານ", cm_h:"ຄະນະບໍລິຫານສະມາຄົມ ຊຸດປັດຈຸບັນ", cm_sub:"ຄະນະນຳ ແລະ ກຳມະການ ທີ່ຂັບເຄື່ອນວຽກງານຂອງສະມາຄົມ",
-  ag_k:"ປະຕິທິນກິດຈະກຳ", ag_h:"ງານທີ່ກຳລັງຈະມາເຖິງ", ag_sub:"ໝາຍປະຕິທິນໄວ້ ແລ້ວມາພົບກັນ", ag_soon:"ໄວໆນີ້", ag_more:"ລາຍລະອຽດ",
-  gl_k:"ຮູບພາບບັນຍາກາດ", gl_h:"ບັນຍາກາດກິດຈະກຳຂອງພວກເຮົາ",
+  ag_k:"ປະຕິທິນກິດຈະກຳ", ag_h:"ງານທີ່ກຳລັງ<em class='hl'>ຈະມາເຖິງ</em>", ag_sub:"ໝາຍປະຕິທິນໄວ້ ແລ້ວມາພົບກັນ", ag_soon:"ໄວໆນີ້", ag_more:"ລາຍລະອຽດ",
+  gl_k:"ຮູບພາບບັນຍາກາດ", gl_h:"ບັນຍາກາດ<em class='hl'>ກິດຈະກຳ</em>ຂອງພວກເຮົາ",
   radar:["ຍຸດທະສາດ","ການຕະຫຼາດ","ລູກຄ້າ","ສິນຄ້າ","ລະບົບວຽກ","ທີມງານ","ການເງິນ","ແຫຼ່ງທຶນ"],
   login:"ເຂົ້າສູ່ລະບົບ", signup:"ສະໝັກສະມາຊິກ",
   badge:"ກໍ່ຕັ້ງ ສິງຫາ 2020 · ສະມາຊິກ 150+ ຫົວໜ່ວຍ",
-  h1:"ເສີມພະລັງທຸລະກິດລາວ<br>ໃຫ້ເຕີບໂຕ ເຊື່ອມໂຍງ ແລະ ແຂ່ງຂັນໄດ້",
+  h1:"ເສີມພະລັງ<span class='hl-word'>ທຸລະກິດລາວ</span><br><span class='h1-sub'>ໃຫ້ເຕີບໂຕ ເຊື່ອມໂຍງ ແລະ ແຂ່ງຂັນໄດ້</span>",
+  qt:"ບໍ່ມີທຸລະກິດໃດ <em class='hl'>ເຕີບໂຕໄດ້ຄົນດຽວ</em>",
+  qt_sub:"ນັ້ນຄືເຫດຜົນທີ່ສະມາຄົມນີ້ມີຢູ່ — ເພື່ອໃຫ້ SME ລາວ ມີເພື່ອນຮ່ວມທາງສະເໝີ",
   hero_p:"ສະມາຄົມສົ່ງເສີມວິສາຫະກິດຂະໜາດຈຸນລະພາກ ຂະໜາດນ້ອຍ ແລະ ຂະໜາດກາງ ແຫ່ງ ສປປ ລາວ — ສະໜັບສະໜູນ MSME ທົ່ວປະເທດໃຫ້ເຕີບໂຕ ສ້າງເຄືອຂ່າຍ ແລະ ປະສົບຜົນສຳເລັດໃນຕະຫຼາດໂລກ",
   cta1:"ສະໝັກສະມາຊິກອອນລາຍ", cta2:"ກວດສຸຂະພາບທຸລະກິດຟຣີ",
   hero_note:"ໃໝ່ — ສະມາຊິກກວດສຸຂະພາບທຸລະກິດ 8 ດ້ານໄດ້ດ້ວຍຕົນເອງ ພ້ອມຮັບບົດລາຍງານແນະນຳທາງອີເມວ",
   s1:"ທຸລະກິດສະມາຊິກໃນເຄືອຂ່າຍ", s2:"ກິດຈະກຳ ແລະ ການຝຶກອົບຮົມຕໍ່ປີ", s3:"ງານໃຫຍ່ປະຈຳປີຂອງສະມາຄົມ", s4:"ຊຸດເຄື່ອງມືສຳລັບ SME",
   ms_k:"ລະບົບສະມາຊິກອອນລາຍ",
-  ms_h:"ເປັນສະມາຊິກມື້ນີ້ — ກວດສຸຂະພາບທຸລະກິດຂອງທ່ານໄດ້ທັນທີ",
+  ms_h:"ເປັນສະມາຊິກມື້ນີ້ — ກວດ<em class='hl'>ສຸຂະພາບທຸລະກິດ</em>ຂອງທ່ານໄດ້ທັນທີ",
   ms_sub:"ບໍ່ຕ້ອງລໍຖ້າຕິດຕໍ່ພະນັກງານ ສະໝັກອອນລາຍດ້ວຍອີເມວດຽວ ແລ້ວໃຊ້ເຄື່ອງມືກວດສຸຂະພາບທຸລະກິດ 8 ດ້ານ ທີ່ສະມາຄົມພັດທະນາເພື່ອສະມາຊິກໂດຍສະເພາະ",
   st1:"ສະໝັກດ້ວຍອີເມວ", st1p:"ບໍ່ຕ້ອງຈື່ລະຫັດຜ່ານ ລະບົບສົ່ງລິ້ງເຂົ້າໃຊ້ງານໄປຫາອີເມວຂອງທ່ານ",
   st2:"ສະມາຄົມອະນຸມັດ", st2p:"ທີມງານກວດສອບ ແລະ ອະນຸມັດສະຖານະສະມາຊິກຂອງທ່ານ",
@@ -681,14 +716,14 @@ lo:{
   d4t:"ເພີ່ມການເຂົ້າເຖິງແຫຼ່ງທຶນ", d4p:"ຊ່ວຍສະມາຊິກເຂົ້າເຖິງທຶນ ສຳລັບເລີ່ມກິດຈະການໃໝ່ ແລະ ຂະຫຍາຍກິດຈະການ ຜ່ານບໍລິການການເງິນ ແລະ ຄູ່ຮ່ວມມືທີ່ກ່ຽວຂ້ອງ",
   d5t:"ນະວັດຕະກຳ ແລະ ໂຄງລ່າງພື້ນຖານ", d5p:"ຂັບເຄື່ອນການຫັນເປັນດິຈິຕອນ ແລະ ນຳໃຊ້ທາງລົດໄຟລາວ-ຈີນ ເພື່ອຂະຫຍາຍຕະຫຼາດ ແລະ ການຄ້າຂ້າມແດນ",
   d6n:"ໃໝ່ 2026", d6t:"ເຄື່ອງມືດິຈິຕອນສຳລັບສະມາຊິກ", d6p:"ລະບົບກວດສຸຂະພາບທຸລະກິດອອນລາຍ 8 ດ້ານ — ຮູ້ຈຸດອ່ອນກ່ອນຊ້າເກີນໄປ ພ້ອມຄຳແນະນຳທີ່ເຮັດໄດ້ຈິງ",
-  ev_k:"ງານເດັ່ນຂອງສະມາຄົມ", ev_h:"ເວທີທີ່ພວກເຮົາສ້າງເພື່ອ SME ລາວ", ev_sub:"ກິດຈະກຳຫຼັກທີ່ໝູນວຽນຕະຫຼອດປີ ເພື່ອເຊື່ອມໂຍງ ສະແດງສິນຄ້າ ແລະ ຍົກລະດັບຜູ້ປະກອບການ",
-  sp_k:"ຜູ້ສະໜັບສະໜູນ", sp_h:"ຂອບໃຈຜູ້ສະໜັບສະໜູນທຸກທ່ານ",
+  ev_k:"ງານເດັ່ນຂອງສະມາຄົມ", ev_h:"ເວທີທີ່ພວກເຮົາສ້າງ <em class='hl'>ເພື່ອ SME ລາວ</em>", ev_sub:"ກິດຈະກຳຫຼັກທີ່ໝູນວຽນຕະຫຼອດປີ ເພື່ອເຊື່ອມໂຍງ ສະແດງສິນຄ້າ ແລະ ຍົກລະດັບຜູ້ປະກອບການ",
+  sp_k:"ຜູ້ສະໜັບສະໜູນ", sp_h:"ຂອບໃຈ<em class='hl'>ຜູ້ສະໜັບສະໜູນ</em>ທຸກທ່ານ",
   ab_k:"ກ່ຽວກັບສະມາຄົມ", ab_h:"ຮູ້ຈັກພວກເຮົາ",
   ab_p:"ສະມາຄົມສົ່ງເສີມວິສາຫະກິດຂະໜາດຈຸນລະພາກ ຂະໜາດນ້ອຍ ແລະ ຂະໜາດກາງ ແຫ່ງ ສປປ ລາວ ກໍ່ຕັ້ງເດືອນສິງຫາ 2020 ເພື່ອເສີມພະລັງ ແລະ ເຊື່ອມໂຍງ MSME ທົ່ວປະເທດ ພວກເຮົາມຸ່ງໝັ້ນສົ່ງເສີມຄວາມຮ່ວມມື ການພັດທະນາແບບຍືນຍົງ ແລະ ຍົກລະດັບຄວາມສາມາດແຂ່ງຂັນຂອງທຸລະກິດລາວ ທັງພາຍໃນ ແລະ ຕ່າງປະເທດ",
   vi_t:"ວິໄສທັດ", vi_p:"ສ້າງລະບົບນິເວດທີ່ມີພະລັງ ເພື່ອໃຫ້ MSME ລາວກ້າວສູ່ລະດັບສາກົນ (world class)",
   mi_t:"ພາລະກິດ",
   missions:["ແລກປ່ຽນຄວາມຮູ້ ແລະ ໃຫ້ຂໍ້ມູນທີ່ຈຳເປັນແກ່ສະມາຊິກ","ຊ່ວຍສະມາຊິກເຕີບໂຕ ທັງຕະຫຼາດພາຍໃນ ແລະ ຕະຫຼາດໂລກ","ຈຸດປະກາຍການພັດທະນາຜູ້ປະກອບການໃນລາວ","ສົ່ງເສີມຄວາມຫຼາກຫຼາຍ ແລະ ການມີສ່ວນຮ່ວມ","ເປັນສູນກາງການສະໜັບສະໜູນ ແລະ ພັດທະນາທຸລະກິດ","ນຳໃຊ້ນະວັດຕະກຳ ແລະ ເຕັກໂນໂລຊີ ເພື່ອການເຕີບໂຕແບບຍືນຍົງ"],
-  vp_k:"ຄ່ານິຍົມ ແລະ ເສົາຫຼັກ", vp_h:"ສິ່ງທີ່ພວກເຮົາຍຶດໝັ້ນ",
+  vp_k:"ຄ່ານິຍົມ ແລະ ເສົາຫຼັກ", vp_h:"ສິ່ງທີ່ພວກເຮົາ<em class='hl'>ຍຶດໝັ້ນ</em>",
   v1:"ຄວາມຊື່ສັດ", v2:"ຄວາມເປັນມືອາຊີບ", v3:"ຄວາມຄິດສ້າງສັນ", v4:"ການມີສ່ວນຮ່ວມ", v5:"ຄວາມເຄົາລົບ",
   p1n:"ເສົາທີ 1", p2n:"ເສົາທີ 2", p3n:"ເສົາທີ 3", p4n:"ເສົາທີ 4",
   p1:"ໃຫ້ MSME ຮູ້ທັນຄວາມຮູ້ທຸລະກິດ ນະໂຍບາຍ ແລະ ທ່າອ່ຽງໂລກທີ່ຈຳເປັນ",
@@ -701,7 +736,7 @@ lo:{
   in_h:"ຮ່ວມສ້າງອະນາຄົດທີ່ຮຸ່ງເຮືອງ ໃຫ້ MSME ລາວໄປພ້ອມກັນ",
   in_p:"ຕັ້ງແຕ່ກໍ່ຕັ້ງໃນປີ 2020 ພວກເຮົາເດີນໜ້າຢ່າງຕໍ່ເນື່ອງ — ເຊື່ອມພາກລັດ ຄູ່ຮ່ວມພັດທະນາ ແລະ ສະຖາບັນການເງິນ ເພື່ອໃຫ້ສະມາຊິກເຂົ້າເຖິງໂອກາດ ຄວາມຮູ້ ແລະ ແຫຼ່ງທຶນ ມື້ນີ້ຂໍເຊີນທຸກທຸລະກິດມາເຕີບໂຕໄປພ້ອມກັນ",
   in_cta:"ສະໝັກສະມາຊິກອອນລາຍ",
-  pt_k:"ຄູ່ຮ່ວມມືທາງຍຸດທະສາດ", pt_h:"ເຄືອຂ່າຍທີ່ຢືນຢູ່ຂ້າງເຮົາ",
+  pt_k:"ຄູ່ຮ່ວມມືທາງຍຸດທະສາດ", pt_h:"ເຄືອຂ່າຍທີ່<em class='hl'>ຢືນຢູ່ຂ້າງເຮົາ</em>",
   pt1:"ພາກລັດ", pt1x:"ກະຊວງອຸດສາຫະກຳ ແລະ ການຄ້າ", pt2:"ຄູ່ຮ່ວມພັດທະນາ", pt3:"ເຄືອຂ່າຍພາກພື້ນ ແລະ ໂລກ", pt4:"ນະວັດຕະກຳ ແລະ ຊາວໜຸ່ມ",
   ft_t:"ສະມາຄົມສົ່ງເສີມ MSME ລາວ",
   ft_p:"Lao Micro, Small and Medium Enterprises Promotion Association — ກໍ່ຕັ້ງ ສິງຫາ 2020 · ນະຄອນຫຼວງວຽງຈັນ ສປປ ລາວ",
@@ -713,18 +748,20 @@ en:{
   brand:"Lao MSME Association<small>ສະມາຄົມສົ່ງເສີມ MSME ລາວ</small>",
   n_member:"Membership", n_do:"What we do", n_about:"About", n_committee:"Committee", n_news:"News", n_partner:"Partners", n_contact:"Contact",
   cm_k:"Executive Committee", cm_h:"Our executive committee", cm_sub:"The leadership and committee members driving the association's work",
-  ag_k:"Event calendar", ag_h:"Upcoming events", ag_sub:"Mark your calendar and join us", ag_soon:"Coming soon", ag_more:"Details",
-  gl_k:"Gallery", gl_h:"Moments from our activities",
+  ag_k:"Event calendar", ag_h:"<em class='hl'>Upcoming</em> events", ag_sub:"Mark your calendar and join us", ag_soon:"Coming soon", ag_more:"Details",
+  gl_k:"Gallery", gl_h:"Moments from our <em class='hl'>activities</em>",
   radar:["Strategy","Marketing","Customers","Product","Operations","Team","Finance","Funding"],
   login:"Sign in", signup:"Join now",
   badge:"Founded Aug 2020 · 150+ members",
-  h1:"Empowering Lao businesses<br>to grow, connect and compete",
+  h1:"Empowering <span class='hl-word'>Lao businesses</span><br><span class='h1-sub'>to grow, connect and compete</span>",
+  qt:"No business <em class='hl'>grows alone</em>",
+  qt_sub:"That's why this association exists — so no Lao SME ever walks alone",
   hero_p:"The Lao Micro, Small and Medium Enterprises Promotion Association — supporting MSMEs across Laos to grow, connect, and succeed in the global marketplace.",
   cta1:"Join online", cta2:"Free business health check",
   hero_note:"New — members can self-assess their business across 8 dimensions, with an advisory report delivered by email.",
   s1:"member businesses in our network", s2:"activities & training sessions per year", s3:"our flagship annual event", s4:"toolkits for SMEs",
   ms_k:"Online membership",
-  ms_h:"Become a member today — check your business health instantly",
+  ms_h:"Become a member today — check your <em class='hl'>business health</em> instantly",
   ms_sub:"No waiting for staff. Sign up online with a single email, then use the 8-dimension business health check built exclusively for members.",
   st1:"Sign up by email", st1p:"No password to remember — we send a secure sign-in link to your inbox",
   st2:"Association approval", st2p:"Our team verifies and approves your membership",
@@ -740,14 +777,14 @@ en:{
   d4t:"Access to finance", d4p:"We help members secure funding for new ventures and expansion by connecting them with financial services and partners.",
   d5t:"Innovation & infrastructure", d5p:"We drive digital transformation and leverage the Lao-China Railway to enhance market access and cross-border trade.",
   d6n:"New 2026", d6t:"Digital tools for members", d6p:"An online 8-dimension business health check — spot weaknesses before it's too late, with practical recommendations.",
-  ev_k:"Flagship programs", ev_h:"The stages we build for Lao SMEs", ev_sub:"Signature events running throughout the year — connecting, showcasing and upskilling entrepreneurs",
-  sp_k:"Sponsors", sp_h:"Thank you to our sponsors",
+  ev_k:"Flagship programs", ev_h:"The stages we build <em class='hl'>for Lao SMEs</em>", ev_sub:"Signature events running throughout the year — connecting, showcasing and upskilling entrepreneurs",
+  sp_k:"Sponsors", sp_h:"Thank you to our <em class='hl'>sponsors</em>",
   ab_k:"About us", ab_h:"Who we are",
   ab_p:"The Lao MSME Association was established in August 2020 to empower and connect MSMEs across Laos. We are committed to fostering collaboration, promoting sustainable development, and enhancing the competitiveness of Lao businesses locally and internationally.",
   vi_t:"Vision", vi_p:"Build an impactful ecosystem for Lao MSMEs to become world class.",
   mi_t:"Mission",
   missions:["Exchange knowledge and keep members informed","Assist members to thrive in local and global markets","Inspire entrepreneurship development in Laos","Promote inclusiveness and diversity","Be the center for business support and development","Innovate and utilize technologies for growth and sustainability"],
-  vp_k:"Values & pillars", vp_h:"What we stand for",
+  vp_k:"Values & pillars", vp_h:"What we <em class='hl'>stand for</em>",
   v1:"Integrity", v2:"Professionalism", v3:"Creativity", v4:"Inclusiveness", v5:"Respect",
   p1n:"Pillar 1", p2n:"Pillar 2", p3n:"Pillar 3", p4n:"Pillar 4",
   p1:"Keep MSMEs up to date with essential business knowledge, policy changes and global trends",
@@ -760,7 +797,7 @@ en:{
   in_h:"Let's shape a prosperous future for Lao MSMEs together",
   in_p:"Since 2020 we have kept moving — connecting government, development partners and financial institutions so members can access opportunity, knowledge and funding. We invite every business to grow with us.",
   in_cta:"Join online",
-  pt_k:"Strategic partners", pt_h:"The network standing with us",
+  pt_k:"Strategic partners", pt_h:"The network <em class='hl'>standing with us</em>",
   pt1:"Government", pt1x:"Ministry of Industry and Commerce", pt2:"Development partners", pt3:"Regional & global networks", pt4:"Innovation & youth",
   ft_t:"Lao MSME Association",
   ft_p:"Lao Micro, Small and Medium Enterprises Promotion Association — founded Aug 2020 · Vientiane Capital, Lao PDR",
@@ -1007,9 +1044,20 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const k = Math.min(.06, (Date.now() - galShownAt)/4800*.06);
       galLayer(galFront).style.transform = `scale(${(1 + k).toFixed(4)})`;
     }
+    
+    if (tkEl) {
+      tkW = tkW || tkEl.scrollWidth / 3;
+      tkX -= 1.1;
+      if (-tkX >= tkW) tkX += tkW;
+      tkEl.style.transform = `translateX(${tkX.toFixed(1)}px)`;
+    }
   }, 60);
 }
 initGallery();
+
+var tkEl = document.getElementById('ticker-track');
+if (tkEl) tkEl.innerHTML = tkEl.innerHTML + tkEl.innerHTML + tkEl.innerHTML;
+var tkX = 0, tkW = 0;
 
 apply();
 setStagger();
