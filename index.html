@@ -675,7 +675,7 @@ const SOCIAL = {
     { lo:"Reel ສະມາຄົມ 3", en:"Association reel 3", reel:"1485086582920357", img:"news_media/reel_3.jpg" },
     { lo:"Reel ສະມາຄົມ 4", en:"Association reel 4", reel:"1274906281183867", img:"news_media/reel_4.jpg" },
     { lo:"Reel ສະມາຄົມ 5", en:"Association reel 5", reel:"1392789071792253", img:"news_media/reel_5.jpg" }
-  ].map(v => ({...v, embed:`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(`https://www.facebook.com/reel/${v.reel}/`)}&show_text=false&autoplay=true`}))
+  ]
 };
 
 /* ═══ I18N — ລາວ (default) + English ═══ */
@@ -868,19 +868,12 @@ function renderSocial(t){
     </div>`).join('');
   
   document.getElementById('video-grid').innerHTML = SOCIAL.videos.map((v,i) => `
-    <div class="video reel reveal in${v.img ? ' has-img' : ''}" ${v.img ? `style="background-image:url('${v.img}')"` : ''} onclick="playReel(this,${i})" role="button" tabindex="0" title="${LANG==='lo'?v.lo:v.en}">
+    <a class="video reel reveal in${v.img ? ' has-img' : ''}" ${v.img ? `style="background-image:url('${v.img}')"` : ''} href="https://www.facebook.com/reel/${v.reel}" target="_blank" rel="noopener" title="${LANG==='lo'?v.lo:v.en}">
       <div class="play"><svg class="icon" viewBox="0 0 24 24"><path d="m7 4 13 8-13 8Z"/></svg></div>
-    </div>`).join('');
+    </a>`).join('');
   document.getElementById('fb-btn').innerHTML = `
     <svg class="icon" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
     ${t.nw_fb}`;
-}
-
-function playReel(el, i){
-  const v = SOCIAL.videos[i];
-  if (!v || !v.embed || el.dataset.playing) return;
-  el.dataset.playing = 1;
-  el.innerHTML = `<iframe src="${v.embed}" title="${LANG==='lo'?v.lo:v.en}" allowfullscreen loading="eager" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`;
 }
 
 /* ═══ theme ═══ */
