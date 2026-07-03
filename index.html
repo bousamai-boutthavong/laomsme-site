@@ -355,7 +355,7 @@ footer .icon{width:16px;height:16px;margin-top:5px}
         <span data-i="cta1"></span>
         <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a class="btn btn-line" style="color:#fff;border-color:rgba(255,255,255,.5)" href="#membersys" data-i="cta2"></a>
+      <a class="btn btn-line" style="color:#fff;border-color:rgba(255,255,255,.5)" href="#agenda" data-i="cta2"></a>
     </div>
     <div class="hero-note hero-anim d5" data-i="hero_note"></div>
   </div>
@@ -387,29 +387,22 @@ footer .icon{width:16px;height:16px;margin-top:5px}
   </div>
 </div>
 
-<section id="membersys">
+<section id="programs">
   <div class="wrap">
-    <div class="kicker reveal" data-i="ms_k"></div>
-    <h2 class="reveal" data-i="ms_h"></h2>
-    <p class="sub reveal" data-i="ms_sub"></p>
-    <div class="ms-flex">
-      <div class="ms-steps stagger">
-        <div class="mstep reveal on"><span class="msnum">1</span><div><h4 data-i="st1"></h4><p data-i="st1p"></p></div></div>
-        <div class="mstep reveal"><span class="msnum">2</span><div><h4 data-i="st2"></h4><p data-i="st2p"></p></div></div>
-        <div class="mstep reveal"><span class="msnum">3</span><div><h4 data-i="st3"></h4><p data-i="st3p"></p></div></div>
-        <div class="mstep reveal"><span class="msnum">4</span><div><h4 data-i="st4"></h4><p data-i="st4p"></p></div></div>
-      </div>
-      <div class="ms-demo reveal" aria-hidden="true">
-        <div class="msd-head"><span class="msd-dot"></span><span data-i="demo_t"></span></div>
-        <div class="msd-score"><b>72</b><span>/100</span><em data-i="demo_v"></em></div>
-        <svg id="msd-radar" viewBox="0 0 430 300" style="width:100%;height:auto;margin-top:10px" aria-hidden="true"></svg>
-        <div class="msd-cap" data-i="demo_cap"></div>
-      </div>
+    <div class="kicker reveal" data-i="ev_k"></div>
+    <h2 class="reveal" data-i="ev_h"></h2>
+    <p class="sub reveal" data-i="ev_sub"></p>
+    <div class="logo-wall programs stagger">
+      <div class="logo-tile ev reveal"><img src="event_logos/event_expo.png" alt="Lao MSME Expo"></div>
+      <div class="logo-tile ev reveal"><img src="event_logos/event_connext.png" alt="Lao MSME Connext"></div>
+      <div class="logo-tile ev reveal"><img src="event_logos/event_catchup.png" alt="Lao MSME Catch-up Business"></div>
+      <div class="logo-tile ev reveal"><img src="event_logos/event_pitch.png" alt="Lao MSME Pitch"></div>
     </div>
-    <div class="pillbar reveal" id="pills"></div>
-    <div class="reveal" style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap">
-      <a class="btn btn-fill" href="#membersys" data-i="ms_cta1"></a>
-      <a class="btn btn-line" href="#contact" data-i="ms_cta2"></a>
+    <div id="agenda" style="margin-top:76px">
+      <div class="kicker reveal" data-i="ag_k"></div>
+      <h2 class="reveal" data-i="ag_h"></h2>
+      <p class="sub reveal" data-i="ag_sub"></p>
+      <div class="agenda stagger" id="agenda-list"></div>
     </div>
   </div>
 </section>
@@ -443,22 +436,29 @@ footer .icon{width:16px;height:16px;margin-top:5px}
   </div>
 </section>
 
-<section id="programs">
+<section id="membersys">
   <div class="wrap">
-    <div class="kicker reveal" data-i="ev_k"></div>
-    <h2 class="reveal" data-i="ev_h"></h2>
-    <p class="sub reveal" data-i="ev_sub"></p>
-    <div class="logo-wall programs stagger">
-      <div class="logo-tile ev reveal"><img src="event_logos/event_expo.png" alt="Lao MSME Expo"></div>
-      <div class="logo-tile ev reveal"><img src="event_logos/event_connext.png" alt="Lao MSME Connext"></div>
-      <div class="logo-tile ev reveal"><img src="event_logos/event_catchup.png" alt="Lao MSME Catch-up Business"></div>
-      <div class="logo-tile ev reveal"><img src="event_logos/event_pitch.png" alt="Lao MSME Pitch"></div>
+    <div class="kicker reveal" data-i="ms_k"></div>
+    <h2 class="reveal" data-i="ms_h"></h2>
+    <p class="sub reveal" data-i="ms_sub"></p>
+    <div class="ms-flex">
+      <div class="ms-steps stagger">
+        <div class="mstep reveal on"><span class="msnum">1</span><div><h4 data-i="st1"></h4><p data-i="st1p"></p></div></div>
+        <div class="mstep reveal"><span class="msnum">2</span><div><h4 data-i="st2"></h4><p data-i="st2p"></p></div></div>
+        <div class="mstep reveal"><span class="msnum">3</span><div><h4 data-i="st3"></h4><p data-i="st3p"></p></div></div>
+        <div class="mstep reveal"><span class="msnum">4</span><div><h4 data-i="st4"></h4><p data-i="st4p"></p></div></div>
+      </div>
+      <div class="ms-demo reveal" aria-hidden="true">
+        <div class="msd-head"><span class="msd-dot"></span><span data-i="demo_t"></span></div>
+        <div class="msd-score"><b>72</b><span>/100</span><em data-i="demo_v"></em></div>
+        <svg id="msd-radar" viewBox="0 0 430 300" style="width:100%;height:auto;margin-top:10px" aria-hidden="true"></svg>
+        <div class="msd-cap" data-i="demo_cap"></div>
+      </div>
     </div>
-    <div id="agenda" style="margin-top:76px">
-      <div class="kicker reveal" data-i="ag_k"></div>
-      <h2 class="reveal" data-i="ag_h"></h2>
-      <p class="sub reveal" data-i="ag_sub"></p>
-      <div class="agenda stagger" id="agenda-list"></div>
+    <div class="pillbar reveal" id="pills"></div>
+    <div class="reveal" style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn btn-fill" href="#membersys" data-i="ms_cta1"></a>
+      <a class="btn btn-line" href="#contact" data-i="ms_cta2"></a>
     </div>
   </div>
 </section>
@@ -694,18 +694,18 @@ lo:{
   qt:"ບໍ່ມີທຸລະກິດໃດ <em class='hl'>ເຕີບໂຕໄດ້ຄົນດຽວ</em>",
   qt_sub:"ນັ້ນຄືເຫດຜົນທີ່ສະມາຄົມນີ້ມີຢູ່ — ເພື່ອໃຫ້ SME ລາວ ມີເພື່ອນຮ່ວມທາງສະເໝີ",
   hero_p:"ສະມາຄົມສົ່ງເສີມຈຸນລະວິສາຫະກິດ, ວິສາຫະກິດຂະຫນາດນ້ອຍ ແລະ ກາງ ລາວ — ສະໜັບສະໜູນ MSME ທົ່ວປະເທດໃຫ້ເຕີບໂຕ ສ້າງເຄືອຂ່າຍ ແລະ ປະສົບຜົນສຳເລັດໃນຕະຫຼາດໂລກ",
-  cta1:"ສະໝັກສະມາຊິກອອນລາຍ", cta2:"ກວດສຸຂະພາບທຸລະກິດຟຣີ",
-  hero_note:"ໃໝ່ — ສະມາຊິກກວດສຸຂະພາບທຸລະກິດ 8 ດ້ານໄດ້ດ້ວຍຕົນເອງ ພ້ອມຮັບບົດລາຍງານແນະນຳທາງອີເມວ",
+  cta1:"ສະໝັກສະມາຊິກອອນລາຍ", cta2:"ເບິ່ງງານທີ່ກຳລັງຈະມາ",
+  hero_note:"ກິດຈະກຳ ແລະ ການຝຶກອົບຮົມ 50+ ຄັ້ງຕໍ່ປີ — ມີງານໃໝ່ໃຫ້ພົບກັນທຸກເດືອນ",
   s1:"ທຸລະກິດສະມາຊິກໃນເຄືອຂ່າຍ", s2:"ກິດຈະກຳ ແລະ ການຝຶກອົບຮົມຕໍ່ປີ", s3:"ງານໃຫຍ່ປະຈຳປີຂອງສະມາຄົມ", s4:"ຊຸດເຄື່ອງມືສຳລັບ SME",
   ms_k:"ລະບົບສະມາຊິກອອນລາຍ",
-  ms_h:"ເປັນສະມາຊິກມື້ນີ້ — ກວດ<em class='hl'>ສຸຂະພາບທຸລະກິດ</em>ຂອງທ່ານໄດ້ທັນທີ",
-  ms_sub:"ບໍ່ຕ້ອງລໍຖ້າຕິດຕໍ່ພະນັກງານ ສະໝັກອອນລາຍດ້ວຍອີເມວດຽວ ແລ້ວໃຊ້ເຄື່ອງມືກວດສຸຂະພາບທຸລະກິດ 8 ດ້ານ ທີ່ສະມາຄົມພັດທະນາເພື່ອສະມາຊິກໂດຍສະເພາະ",
+  ms_h:"ເປັນສະມາຊິກມື້ນີ້ — ເຂົ້າຮ່ວມ<em class='hl'>ເຄືອຂ່າຍ ແລະ ກິດຈະກຳ</em>ຂອງພວກເຮົາ",
+  ms_sub:"ສະໝັກອອນລາຍດ້ວຍອີເມວດຽວ ເຂົ້າເຖິງເຄືອຂ່າຍ ກິດຈະກຳ ແລະ ສິດທິປະໂຫຍດຂອງສະມາຊິກ — ສ່ວນເຄື່ອງມືກວດສຸຂະພາບທຸລະກິດ 8 ດ້ານ ກຳລັງພັດທະນາ ຈະເປີດໃຫ້ສະມາຊິກໄວໆນີ້",
   st1:"ສະໝັກດ້ວຍອີເມວ", st1p:"ບໍ່ຕ້ອງຈື່ລະຫັດຜ່ານ ລະບົບສົ່ງລິ້ງເຂົ້າໃຊ້ງານໄປຫາອີເມວຂອງທ່ານ",
   st2:"ສະມາຄົມອະນຸມັດ", st2p:"ທີມງານກວດສອບ ແລະ ອະນຸມັດສະຖານະສະມາຊິກຂອງທ່ານ",
-  st3:"ກວດສຸຂະພາບທຸລະກິດ", st3p:"ຕອບຄຳຖາມຕາມຄວາມເປັນຈິງເທື່ອລະດ້ານ ຮັບບົດລາຍງານແບບທີ່ປຶກສາ ພ້ອມສິ່ງທີ່ຄວນເຮັດກ່ອນ",
-  st4:"ຕິດຕາມພັດທະນາການ", st4p:"ລະບົບເຕືອນກວດຄືນທຸກເດືອນ ເຫັນຄະແນນດີຂຶ້ນ ຫຼື ຫຼຸດລົງ ຄືກັບກວດສຸຂະພາບປະຈຳປີ",
+  st3:"ເຂົ້າຮ່ວມກິດຈະກຳ", st3p:"ພົບປະເຄືອຂ່າຍ ຝຶກອົບຮົມ ແລະ ງານໃຫຍ່ຂອງສະມາຄົມ ຕະຫຼອດປີ",
+  st4:"ໃຊ້ເຄື່ອງມືດິຈິຕອນ · ໄວໆນີ້", st4p:"ເຄື່ອງມືກວດສຸຂະພາບທຸລະກິດ 8 ດ້ານ ພ້ອມບົດລາຍງານແນະນຳ — ກຳລັງພັດທະນາ ເປີດໃຫ້ສະມາຊິກໄວໆນີ້",
   pills:["ຍຸດທະສາດ","ການຕະຫຼາດ","ລູກຄ້າ","ສິນຄ້າ/ບໍລິການ","ລະບົບວຽກ","ທີມງານ","ການເງິນ","ແຫຼ່ງທຶນ"],
-  demo_t:"ຜົນກວດສຸຂະພາບທຸລະກິດ (ຕົວຢ່າງ)", demo_v:"ແຂງແຮງ", demo_cap:"ຄະແນນ 8 ດ້ານ ອັບເດດທຸກຄັ້ງທີ່ກວດ — ເຫັນພັດທະນາການຄືກວດສຸຂະພາບປະຈຳປີ",
+  demo_t:"ເຄື່ອງມືກວດສຸຂະພາບທຸລະກິດ — ໄວໆນີ້ (ຕົວຢ່າງ)", demo_v:"ແຂງແຮງ", demo_cap:"ຄະແນນ 8 ດ້ານ ອັບເດດທຸກຄັ້ງທີ່ກວດ — ເຫັນພັດທະນາການຄືກວດສຸຂະພາບປະຈຳປີ",
   ms_cta1:"ສະໝັກສະມາຊິກ — ຟຣີໃນໄລຍະເປີດຕົວ", ms_cta2:"ສອບຖາມເລື່ອງສະມາຊິກ",
   do_k:"ສິ່ງທີ່ພວກເຮົາເຮັດ", do_h:"ພາລະກິດຫຼັກ 5 ດ້ານຂອງສະມາຄົມ",
   d1t:"ສ້າງຄວາມຮ່ວມມື ແລະ ເຄືອຂ່າຍ", d1p:"ເຊື່ອມພັນທະມິດ ແລະ ເຄືອຂ່າຍທີ່ເຂັ້ມແຂງລະຫວ່າງ MSME ສົ່ງເສີມການແລກປ່ຽນຄວາມຮູ້ ແລະ ການເຕີບໂຕຮ່ວມກັນ",
@@ -755,18 +755,18 @@ en:{
   qt:"No business <em class='hl'>grows alone</em>",
   qt_sub:"That's why this association exists — so no Lao SME ever walks alone",
   hero_p:"The Lao Micro, Small and Medium Enterprises Promotion Association — supporting MSMEs across Laos to grow, connect, and succeed in the global marketplace.",
-  cta1:"Join online", cta2:"Free business health check",
-  hero_note:"New — members can self-assess their business across 8 dimensions, with an advisory report delivered by email.",
+  cta1:"Join online", cta2:"See upcoming events",
+  hero_note:"50+ activities and training sessions a year — there's something new every month.",
   s1:"member businesses in our network", s2:"activities & training sessions per year", s3:"our flagship annual event", s4:"toolkits for SMEs",
   ms_k:"Online membership",
-  ms_h:"Become a member today — check your <em class='hl'>business health</em> instantly",
-  ms_sub:"No waiting for someone to get back to you — sign up online with just your email address, then use the 8-dimension business health check built exclusively for members.",
+  ms_h:"Become a member today — join our <em class='hl'>network and events</em>",
+  ms_sub:"Sign up online with just your email address and get access to our network, events and member benefits — the 8-dimension business health check is in the works and coming to members soon.",
   st1:"Sign up by email", st1p:"No password to remember — we send a secure sign-in link to your inbox",
   st2:"Get approved", st2p:"Our team verifies and approves your membership",
-  st3:"Run your health check", st3p:"Answer fact-based questions one dimension at a time, then get an advisory report showing what to tackle first",
-  st4:"Track progress", st4p:"Monthly reminders to re-check — watch your scores move up or down over time, just like an annual health exam",
+  st3:"Join the events", st3p:"Meet the network at trainings, forums and the association's flagship events all year round",
+  st4:"Digital tools · coming soon", st4p:"An 8-dimension business health check with advisory reports — in development and coming to members soon",
   pills:["Strategy","Marketing","Customers","Products & services","Operations","Team","Finance","Funding"],
-  demo_t:"Business health check results (sample)", demo_v:"Healthy", demo_cap:"Scores across 8 dimensions, updated every check — track progress like an annual health exam",
+  demo_t:"Business health check — coming soon (sample)", demo_v:"Healthy", demo_cap:"Scores across 8 dimensions, updated every check — track progress like an annual health exam",
   ms_cta1:"Join now — free during our launch period", ms_cta2:"Ask about membership",
   do_k:"What we do", do_h:"Our 5 core missions",
   d1t:"Collaboration & networking", d1p:"We facilitate meaningful partnerships and robust networks among MSMEs, promoting knowledge-sharing and collective growth.",
