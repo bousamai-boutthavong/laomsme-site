@@ -123,6 +123,11 @@ header.scrolled{box-shadow:0 6px 24px rgba(10,20,40,.10)}
 .card p{font-size:13.8px;color:var(--muted)}
 .num{font-size:12px;font-weight:800;color:var(--faint);letter-spacing:.1em;margin-bottom:8px}
 
+.ms-photo{aspect-ratio:1/1;border-radius:12px;background-size:cover;background-position:center;position:relative;overflow:hidden;margin-bottom:18px}
+.ms-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(9,20,42,.55) 10%,rgba(28,95,192,.30) 100%)}
+.ms-ic{position:absolute;left:12px;top:12px;z-index:2;width:38px;height:38px;border-radius:10px;background:rgba(10,20,40,.45);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center}
+.ms-ic .icon{color:#fff;margin:0;width:20px;height:20px}
+
 /* ── member system ── */
 #membersys{background:linear-gradient(180deg,var(--bg) 0%,var(--body) 100%)}
 .pillbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
@@ -415,28 +420,24 @@ footer .icon{width:16px;height:16px;margin-top:5px}
     <h2 class="reveal" data-i="do_h"></h2>
     <div class="grid3 stagger">
       <div class="card reveal">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M17 6.1H3M21 12.1H3M15.1 18H3"/></svg>
+        <div class="ms-photo" style="background-image:url('mission/ms_1.jpg')"><span class="ms-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M17 6.1H3M21 12.1H3M15.1 18H3"/></svg></span></div>
         <div class="num">01</div><h3 data-i="d1t"></h3><p data-i="d1p"></p>
       </div>
       <div class="card reveal">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        <div class="ms-photo" style="background-image:url('mission/ms_2.jpg')"><span class="ms-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span></div>
         <div class="num">02</div><h3 data-i="d2t"></h3><p data-i="d2p"></p>
       </div>
       <div class="card reveal">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+        <div class="ms-photo" style="background-image:url('mission/ms_3.jpg')"><span class="ms-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg></span></div>
         <div class="num">03</div><h3 data-i="d3t"></h3><p data-i="d3p"></p>
       </div>
       <div class="card reveal">
-        <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        <div class="ms-photo" style="background-image:url('mission/ms_4.jpg')"><span class="ms-ic"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span></div>
         <div class="num">04</div><h3 data-i="d4t"></h3><p data-i="d4p"></p>
       </div>
       <div class="card reveal">
-        <svg class="icon" viewBox="0 0 24 24"><path d="m13 2-2 10h4l-2 10"/><path d="M7 12h2M15 12h2"/></svg>
+        <div class="ms-photo" style="background-image:url('mission/ms_5.jpg')"><span class="ms-ic"><svg class="icon" viewBox="0 0 24 24"><path d="m13 2-2 10h4l-2 10"/><path d="M7 12h2M15 12h2"/></svg></span></div>
         <div class="num">05</div><h3 data-i="d5t"></h3><p data-i="d5p"></p>
-      </div>
-      <div class="card reveal" style="background:#1C5FC0;border-color:#1C5FC0;color:#fff">
-        <svg class="icon" style="color:#fff" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        <div class="num" style="color:#AFC3E6" data-i="d6n"></div><h3 style="color:#fff" data-i="d6t"></h3><p style="color:#D7E2F5" data-i="d6p"></p>
       </div>
     </div>
   </div>
