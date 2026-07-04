@@ -1057,6 +1057,25 @@ apply();
 setStagger();
 checkReveals();
 setTimeout(checkReveals, 400); 
+
+(function(){
+  try{
+    fetch('https://app.laomsme.org/api/auth/session',{credentials:'include'})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(s){
+        if(!s || !s.user) return;
+        var cta = document.querySelector('.nav-cta');
+        if(!cta) return;
+        var em = (s.user.email || '');
+        var letter = em ? em.charAt(0).toUpperCase() : 'S';
+        var label = (typeof LANG !== 'undefined' && LANG === 'en') ? 'Member area' : 'ໜ້າສະມາຊິກ';
+        cta.innerHTML = '<a class="btn btn-fill" href="https://app.laomsme.org/dashboard" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px">'
+          + '<span style="width:24px;height:24px;border-radius:50%;background:#fff;color:#1C5FC0;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex:none">' + letter + '</span>'
+          + '<span>' + label + '</span></a>';
+      })
+      .catch(function(){});
+  }catch(e){}
+})();
 </script>
 </body>
 </html>
