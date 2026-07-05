@@ -187,6 +187,55 @@ header.scrolled{box-shadow:0 6px 24px rgba(10,20,40,.10)}
 .ag-side{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 .ag-chip{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--gold);background:rgba(184,119,14,.13);border-radius:14px;padding:4px 12px;text-transform:uppercase;white-space:nowrap}
 
+.ag-row.past{opacity:.42;filter:grayscale(.45)}
+.ag-row.past:hover{opacity:.72}
+.ag-row.past .ag-date b{color:var(--faint)}
+.ag-chip.done{color:var(--faint);background:var(--soft)}
+.ag-chip.ext{color:var(--blue);background:rgba(28,95,192,.12)}
+.ag-divider{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--faint);text-transform:uppercase;padding:30px 10px 10px;border-bottom:1px solid var(--line)}
+
+.ag-tabs{display:inline-flex;gap:4px;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:4px;margin-top:24px}
+.ag-tab{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-size:13.5px;font-weight:700;color:var(--muted);background:transparent;border:0;border-radius:9px;padding:8px 18px;cursor:pointer;transition:.2s}
+.ag-tab.on{background:var(--card);color:var(--blue);box-shadow:0 2px 10px rgba(20,34,58,.10)}
+.ag-tab .icon{width:15px;height:15px}
+
+.cal{margin-top:34px;border:1px solid var(--line);border-radius:18px;background:var(--card);padding:22px;box-shadow:var(--shadow)}
+.cal-head{display:flex;align-items:center;gap:10px}
+.cal-title{font-size:19px;font-weight:800;flex:1;text-align:center}
+.cal-nav{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;flex:none;border-radius:10px;border:1px solid var(--line);background:var(--soft);color:var(--ink);cursor:pointer;transition:.2s}
+.cal-nav:hover{border-color:var(--blue);color:var(--blue)}
+.cal-nav .icon{width:16px;height:16px}
+.cal-today{font-family:inherit;font-size:12.5px;font-weight:700;color:var(--blue);background:transparent;border:1px solid var(--line);border-radius:10px;padding:8px 14px;cursor:pointer;transition:.2s}
+.cal-today:hover{border-color:var(--blue)}
+.cal-months{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin-top:14px}
+.cal-nav.sm{width:28px;height:28px;border-radius:8px}
+.cal-nav.sm .icon{width:13px;height:13px}
+.cal-ylabel{font-size:13px;font-weight:800;color:var(--muted);padding:0 4px}
+.cal-mchip{font-family:inherit;font-size:12px;font-weight:700;color:var(--muted);background:var(--soft);border:1px solid transparent;border-radius:9px;padding:5px 11px;cursor:pointer;transition:.2s}
+.cal-mchip:hover{color:var(--blue)}
+.cal-mchip.on{color:#fff;background:var(--blue)}
+.cal-mchip.has-ev{border-color:var(--accent)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:16px}
+.cal-dow{text-align:center;font-size:11px;font-weight:800;color:var(--faint);padding:6px 0;letter-spacing:.04em}
+.cal-day{position:relative;min-height:54px;border-radius:10px;padding-top:7px;text-align:center;font-size:13px;font-weight:600;color:var(--ink);background:var(--soft)}
+.cal-day b{font-weight:inherit;display:block;line-height:1.3}
+.cal-day .dots{line-height:0;margin-top:3px}
+.cal-day .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin:0 2px}
+.cal-day .dot.ext{background:var(--blue)}
+.cal-day.out{background:transparent}
+.cal-day.gone{opacity:.38}
+.cal-day.has{background:rgba(232,163,61,.15)}
+.cal-day.today{outline:2px solid var(--blue);outline-offset:-2px;font-weight:800}
+.cal-empty{color:var(--muted);font-size:14px;text-align:center;padding:24px 4px}
+.cal-list .ag-row{padding:20px 4px}
+.cal-list .ag-row:last-child{border-bottom:0}
+
+.news-meta{display:flex;align-items:center;gap:10px;margin-bottom:7px;flex-wrap:wrap}
+.news-cat{font-size:10.5px;font-weight:800;letter-spacing:.06em;color:var(--blue);background:rgba(28,95,192,.10);border-radius:10px;padding:3px 11px;text-transform:uppercase;white-space:nowrap}
+.news-cat.fund{color:var(--gold);background:rgba(184,119,14,.12)}
+.news-cat.compete{color:var(--red);background:rgba(225,35,32,.09)}
+.news-meta .news-date{margin:0}
+
 .gal{position:relative;margin-top:36px;aspect-ratio:16/9;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#0E1B33}
 .gal-layer{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;will-change:transform,opacity}
 .gal-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(10,20,40,.35);backdrop-filter:blur(6px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:background .2s}
@@ -284,6 +333,10 @@ footer .icon{width:16px;height:16px;margin-top:5px}
   .ag-row{grid-template-columns:76px 1fr;gap:14px}
   .ag-side{grid-column:1 / -1;flex-direction:row;align-items:center;justify-content:flex-start}
   .ag-date b{font-size:30px}
+  .cal{padding:14px}
+  .cal-day{min-height:46px;font-size:12px}
+  .cal-title{font-size:16px}
+  .cal-today{padding:8px 10px}
   .gal{aspect-ratio:4/3;border-radius:16px}
   .gal-btn{width:38px;height:38px}
   .gal-btn.prev{left:10px}
@@ -403,7 +456,16 @@ footer .icon{width:16px;height:16px;margin-top:5px}
       <div class="kicker reveal" data-i="ag_k"></div>
       <h2 class="reveal" data-i="ag_h"></h2>
       <p class="sub reveal" data-i="ag_sub"></p>
+      <div class="ag-tabs reveal in" role="tablist">
+        <button type="button" class="ag-tab on" id="agv-list" onclick="setAgView('list')">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+          <span data-i="ag_vlist"></span></button>
+        <button type="button" class="ag-tab" id="agv-cal" onclick="setAgView('cal')">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <span data-i="ag_vcal"></span></button>
+      </div>
       <div class="agenda stagger" id="agenda-list"></div>
+      <div class="cal" id="agenda-cal" style="display:none"></div>
     </div>
   </div>
 </section>
@@ -658,16 +720,47 @@ const SOCIAL = {
   facebookPage: "https://www.facebook.com/TheLaoSME",
 
   news: [
-    { date:"", img:"news_media/news_1.jpg", lo:"ພາບລວມບັນຍາກາດງານ LAOMSME Connext ຄັ້ງທີ 19", en:"Highlights from LAOMSME Connext #19",
+
+    { date:"2026-07-01", cat:"fund", img:"news_media/fbnews_1.jpg",
+      lo:"APB ເປີດສິນເຊື່ອສົ່ງເສີມທຸລະກິດ MSME ດອກເບ້ຍພິເສດ 3% ຕໍ່ປີ",
+      en:"APB launches MSME promotion loans at a special 3% annual rate",
+      lo_p:"ຮອງຮັບ 3 ຂະແໜງບູລິມະສິດ ການຜະລິດ ການຄ້າ ແລະ ການທ່ອງທ່ຽວ ຍື່ນຂໍໄດ້ທີ່ ທສກ ທົ່ວປະເທດ ໂທ 1989",
+      en_p:"Covering production, trade and tourism priority sectors · apply at any APB branch nationwide · hotline 1989",
+      url:"https://www.facebook.com/APB.Bank/posts/pfbid02HsmjaikULDdnnSwtrr4yv4BszAVyEJ2yeadPeQPKngY2FD9uSm47UH3R9tvDBwPyl" },
+    { date:"2026-06-29", cat:"fund", img:"news_media/fbnews_2.jpg",
+      lo:"ທສວ ສະໜອງທຶນ 5,000 ລ້ານກີບ ໃຫ້ກອງທຶນນາງຟ້າ ຄ້ຳປະກັນສິນເຊື່ອຈຸນລະວິສາຫະກິດ",
+      en:"SMEPDF commits LAK 5 billion to the Nang Fa Fund for micro-enterprise credit guarantees",
+      lo_p:"ເຊັນສັນຍາຮ່ວມກັບ ສຄອຊ ໄລຍະ 5 ປີ ຊ່ວຍທຸລະກິດທີ່ຫຼັກຊັບຄ້ຳປະກັນບໍ່ພຽງພໍ ໃຫ້ເຂົ້າເຖິງແຫຼ່ງທຶນທະນາຄານ",
+      en_p:"A five-year agreement signed with LNCCI helps businesses with insufficient collateral access bank financing",
+      url:"https://www.facebook.com/SmePromotionFund/posts/pfbid0VytH6tqiFbVU2kFuUme7F5ikzbvbE7EXPBhNT3veCTVMC5oNXLMpm1GkP3RJVz28l" },
+    { date:"2026-06-27", cat:"compete", img:"news_media/fbnews_4.jpg",
+      lo:"15 ທີມສຸດທ້າຍ ນຳສະເໜີແຜນທຸລະກິດຍືນຍົງ ຊິງທຶນສົມທົບ ໂຄງການລາວຍືນຍາວ",
+      en:"15 finalists pitch sustainable business plans for Lasting Laos matching grants",
+      lo_p:"MSME ແລະ ຜູ້ປະກອບການໄວໜຸ່ມ ນຳສະເໜີແນວຄິດທຸລະກິດເປັນມິດຕໍ່ສິ່ງແວດລ້ອມ ສະໜັບສະໜູນໂດຍ EU ແລະ ສຄອຊ",
+      en_p:"Young entrepreneurs and MSMEs present green business ideas, supported by the EU and LNCCI",
+      url:"https://www.facebook.com/lastinglao/posts/pfbid02mPfCWJh6bTVCQY1yK4vB5bqwXuA8YRCGHnfLG7bKS6YtnDfL9nk42zeLLbmZWBPnl" },
+    { date:"2026-06-25", cat:"move", img:"news_media/fbnews_3.jpg",
+      lo:"ກະຊວງອຸດສາຫະກຳ ແລະ ການຄ້າ ປ່ຽນກາໝາຍ (ໂລໂກ) ໃໝ່ຢ່າງເປັນທາງການ",
+      en:"Ministry of Industry and Commerce officially adopts a new logo",
+      lo_p:"ແຈ້ງໃຫ້ທຸກພາກສ່ວນ ທັງພາກລັດ ເອກະຊົນ ພາຍໃນ ແລະ ຕ່າງປະເທດ ຮັບຊາບ ແລະ ນຳໃຊ້ໃຫ້ຖືກຕ້ອງ",
+      en_p:"All government, private, domestic and international partners are advised to use the new mark",
+      url:"https://www.facebook.com/moic.gov.la/posts/pfbid02yaMhCXwcEeN2ZKiyZXRppvJs7n2mHRwC9uyACiaqupKTqt1dcJTt9uFM1Eo6J4aGl" },
+    { date:"2026-06-16", cat:"fund", img:"news_media/fbnews_5.jpg",
+      lo:"ທສວ ເປີດຮັບຂໍ້ສະເໜີຂໍທຶນສົມທົບ ສຳລັບວິສາຫະກິດທົ່ວປະເທດ",
+      en:"SMEPDF opens applications for matching funds for enterprises nationwide",
+      lo_p:"ວິສາຫະກິດທີ່ດຳເນີນກິດຈະການຢ່າງໜ້ອຍ 2 ປີ ໃນຂະແໜງບູລິມະສິດ ດາວໂຫລດແບບຟອມ ແລະ ຍື່ນໄດ້ເລີຍ",
+      en_p:"Businesses operating for 2+ years in priority sectors can download the form and apply now",
+      url:"https://www.facebook.com/SmePromotionFund/posts/pfbid0Y32sk1Fq6mgmRaQh1SyQnDCrdQqB76tJswUHdXpJBuuK3A1owQQEHTieKZ9iWMsHl" },
+    { date:"", cat:"forum", img:"news_media/news_1.jpg", lo:"ພາບລວມບັນຍາກາດງານ LAOMSME Connext ຄັ້ງທີ 19", en:"Highlights from LAOMSME Connext #19",
       lo_p:"ຄວາມຮູ້ເຕັມອີ່ມ ເຄືອຂ່າຍກວ້າງໄກ ຮ່ວມກັນຂັບເຄື່ອນທຸລະກິດລາວໃຫ້ເຕີບໂຕ", en_p:"Knowledge, networks and momentum — driving Lao businesses forward together.",
       url:"https://www.facebook.com/TheLaoSME/posts/pfbid084TakVf6pEKY97t2uZJWsd7rKjGsC6vgsm9FwG6dnNoWZWnKCuff6ELA8XFTSjoGl" },
-    { date:"", img:"news_media/news_2.jpg", lo:"5 ເຄື່ອງມື AI ສາຍ Creative ສຳລັບທຸລະກິດ", en:"5 creative AI tools for your business",
+    { date:"", cat:"move", img:"news_media/news_2.jpg", lo:"5 ເຄື່ອງມື AI ສາຍ Creative ສຳລັບທຸລະກິດ", en:"5 creative AI tools for your business",
       lo_p:"ເພີ່ມຄວາມປັງໃຫ້ທຸລະກິດ ແລະ ວຽກງານຂອງທ່ານ ດ້ວຍ AI ທີ່ຊ່ວຍໃຫ້ວຽກງ່າຍຂຶ້ນ ແລະ ປະຢັດເວລາ", en_p:"Work smarter and save time with AI tools anyone can use.",
       url:"https://www.facebook.com/TheLaoSME/posts/pfbid0cEngRRGPs78ee8WXR476XnFaJK87LxLwfsmiTfRP9FgyNUg9wAq3WpXzpuowHxdcl" },
-    { date:"", img:"news_media/news_3.jpg", lo:"ພົບກັບງານ LAO SME CONNEXT 19", en:"LAO SME CONNEXT 19 is back",
+    { date:"", cat:"forum", img:"news_media/news_3.jpg", lo:"ພົບກັບງານ LAO SME CONNEXT 19", en:"LAO SME CONNEXT 19 is back",
       lo_p:"ເວທີແຫ່ງການເຊື່ອມໂຍງ ແລະ ແລກປ່ຽນປະສົບການທາງທຸລະກິດ", en_p:"The stage where businesses connect and share experiences is back.",
       url:"https://www.facebook.com/TheLaoSME/posts/pfbid02NZV6G1yLkp2Xb91gMvD7av4oKY7iSwC8ptjikgmHPK6QofsWkjfgpNx9Ywyc2Bnnl" },
-    { date:"", img:"news_media/news_4.jpg", lo:"ສຳເລັດງານ LAOMSME CATCH-UP BUSINESS ຄັ້ງທີ 09", en:"That's a wrap on LAOMSME Catch-up Business #9",
+    { date:"", cat:"forum", img:"news_media/news_4.jpg", lo:"ສຳເລັດງານ LAOMSME CATCH-UP BUSINESS ຄັ້ງທີ 09", en:"That's a wrap on LAOMSME Catch-up Business #9",
       lo_p:"ຕະຫຼອດ 9 ຄັ້ງຜ່ານມາ ພວກເຮົາເຊື່ອມໂຍງຜູ້ປະກອບການເຂົ້າຫາກັນຢ່າງຕໍ່ເນື່ອງ", en_p:"Nine editions of connecting entrepreneurs, and counting.",
       url:"https://www.facebook.com/TheLaoSME/posts/pfbid02vFVRRgXDNjncnZvdLXsneYoj7p4o9ZKmk3H7sZ8pLnb8VqvQgb4cd76JtB76W9tQl" }
   ],
@@ -689,6 +782,11 @@ lo:{
   n_member:"ລະບົບສະມາຊິກ", n_health:"ກວດສຸຂະພາບທຸລະກິດ", n_do:"ສິ່ງທີ່ເຮົາເຮັດ", n_about:"ກ່ຽວກັບສະມາຄົມ", n_committee:"ຄະນະບໍລິຫານ", n_news:"ຂ່າວສານ", n_partner:"ຄູ່ຮ່ວມມື", n_contact:"ຕິດຕໍ່",
   cm_k:"ຄະນະບໍລິຫານ", cm_h:"ຄະນະບໍລິຫານສະມາຄົມ ຊຸດປັດຈຸບັນ", cm_sub:"ຄະນະນຳ ແລະ ກຳມະການ ທີ່ຂັບເຄື່ອນວຽກງານຂອງສະມາຄົມ",
   ag_k:"ປະຕິທິນກິດຈະກຳ", ag_h:"ງານທີ່ກຳລັງ<em class='hl'>ຈະມາເຖິງ</em>", ag_sub:"ໝາຍປະຕິທິນໄວ້ ແລ້ວມາພົບກັນ", ag_soon:"ໄວໆນີ້", ag_more:"ລາຍລະອຽດ",
+  ag_vlist:"ລາຍການ", ag_vcal:"ປະຕິທິນ", ag_done:"ຜ່ານມາແລ້ວ", ag_ext:"ງານເຄືອຂ່າຍ", ag_today:"ມື້ນີ້", ag_empty:"ບໍ່ມີງານໃນເດືອນນີ້", ag_past_h:"ງານທີ່ຜ່ານມາ",
+  nc_fund:"ແຫຼ່ງທຶນ", nc_compete:"ການແຂ່ງຂັນ", nc_forum:"ເວທີ ແລະ ງານ", nc_move:"ຄວາມເຄື່ອນໄຫວ",
+  months:["ມັງກອນ","ກຸມພາ","ມີນາ","ເມສາ","ພຶດສະພາ","ມິຖຸນາ","ກໍລະກົດ","ສິງຫາ","ກັນຍາ","ຕຸລາ","ພະຈິກ","ທັນວາ"],
+  months_s:["ມກ","ກພ","ມນ","ມສ","ພພ","ມຖ","ກກ","ສຫ","ກຍ","ຕລ","ພຈ","ທວ"],
+  dow:["ອາ","ຈ","ອຄ","ພ","ພຫ","ສຸ","ສ"],
   gl_k:"ຮູບພາບບັນຍາກາດ", gl_h:"ບັນຍາກາດ<em class='hl'>ກິດຈະກຳ</em>ຂອງພວກເຮົາ",
   radar:["ຍຸດທະສາດ","ການຕະຫຼາດ","ລູກຄ້າ","ສິນຄ້າ","ລະບົບວຽກ","ທີມງານ","ການເງິນ","ແຫຼ່ງທຶນ"],
   login:"ເຂົ້າສູ່ລະບົບ", signup:"ສະໝັກສະມາຊິກ",
@@ -750,6 +848,11 @@ en:{
   n_member:"Membership", n_health:"Health check", n_do:"What we do", n_about:"About", n_committee:"Committee", n_news:"News", n_partner:"Partners", n_contact:"Contact",
   cm_k:"Executive Committee", cm_h:"Meet the current committee", cm_sub:"The leadership and committee members driving the association's work",
   ag_k:"Event calendar", ag_h:"<em class='hl'>Upcoming</em> events", ag_sub:"Mark your calendar and join us", ag_soon:"Coming soon", ag_more:"Details",
+  ag_vlist:"List", ag_vcal:"Calendar", ag_done:"Past", ag_ext:"Network event", ag_today:"Today", ag_empty:"No events this month", ag_past_h:"Past events",
+  nc_fund:"Funding", nc_compete:"Competition", nc_forum:"Forums & events", nc_move:"Updates",
+  months:["January","February","March","April","May","June","July","August","September","October","November","December"],
+  months_s:["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"],
+  dow:["Su","Mo","Tu","We","Th","Fr","Sa"],
   gl_k:"Gallery", gl_h:"Moments from our <em class='hl'>events</em>",
   radar:["Strategy","Marketing","Customers","Product","Operations","Team","Finance","Funding"],
   login:"Sign in", signup:"Join now",
@@ -808,30 +911,101 @@ en:{
 };
 
 const AGENDA = [
-  { d:"04", m_lo:"ກໍລະກົດ", m_en:"JUL", y:"2026",
+  { date:"2026-07-04", src:"ext",
     t:"Startnovation Forum 2026",
     p_lo:"Embrace Change For Future Success · ຫໍວັດທະນະທຳແຫ່ງຊາດ · ລົງທະບຽນ 12:00", p_en:"Embrace Change For Future Success · National Culture Hall · Registration from 12:00",
     url:"https://www.facebook.com/startnovation/posts/pfbid02mCjhvLJLEvKbPGFFqrdDY2wwbZwb4iZKfHzD2F6jGwVZFgDqCYs8SUvcidh6qEqql" },
-  { d:"26", m_lo:"ກໍລະກົດ", m_en:"JUL", y:"2026",
+  { date:"2026-07-26", src:"assoc",
     t:"LAO MSME Catch-up #10",
     p_lo:"ວົງແລກປ່ຽນປະສົບການຜູ້ປະກອບການ ປະຈຳເດືອນ", p_en:"A monthly gathering where entrepreneurs share experiences", url:"" },
-  { d:"—", m_lo:"ກັນຍາ", m_en:"SEP", y:"2026",
+  { date:"2026-09", src:"assoc",
     t:"LAO MSME Connext #20",
     p_lo:"ເວທີເຊື່ອມໂຍງທຸລະກິດ ຄັ້ງທີ 20 · ຈະແຈ້ງວັນທີພາຍຫຼັງ", p_en:"Business networking forum #20 · date to be announced", url:"" }
 ];
-function renderAgenda(t){
-  const el = document.getElementById('agenda-list');
-  if (!el) return;
-  el.innerHTML = AGENDA.map(a => `
-    <div class="ag-row reveal in">
-      <div class="ag-date"><b>${a.d}</b><span>${LANG==='lo'?a.m_lo:a.m_en} ${a.y}</span></div>
-      <div class="ag-body"><h3>${a.t}</h3><p>${LANG==='lo'?a.p_lo:a.p_en}</p></div>
+
+function agTodayIso(){
+  const n = new Date();
+  return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0');
+}
+function agIsPast(a){
+  const today = agTodayIso(), last = a.end || a.date;
+  return last.length === 7 ? last < today.slice(0,7) : last < today; 
+}
+function agSortKey(a){ return a.date.length === 7 ? a.date + '-32' : a.date; } 
+function agRow(a, t){
+  const past = agIsPast(a);
+  const [y, m, d] = a.date.split('-');
+  const chip = past ? `<span class="ag-chip done">${t.ag_done}</span>`
+    : a.src === 'ext' ? `<span class="ag-chip ext">${t.ag_ext}</span>`
+    : `<span class="ag-chip">${t.ag_soon}</span>`;
+  return `
+    <div class="ag-row reveal in${past ? ' past' : ''}">
+      <div class="ag-date"><b>${d ? +d : '—'}</b><span>${t.months[+m-1]} ${y}</span></div>
+      <div class="ag-body"><h3>${a.t}</h3><p>${LANG==='lo' ? a.p_lo : a.p_en}</p></div>
       <div class="ag-side">
-        <span class="ag-chip">${t.ag_soon}</span>
+        ${chip}
         ${a.url ? `<a class="news-link" href="${a.url}" target="_blank" rel="noopener">${t.ag_more}
           <svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>` : ''}
       </div>
-    </div>`).join('');
+    </div>`;
+}
+function renderAgenda(t){
+  const el = document.getElementById('agenda-list');
+  if (!el) return;
+  const up   = AGENDA.filter(a => !agIsPast(a)).sort((a,b) => agSortKey(a) < agSortKey(b) ? -1 : 1);
+  const past = AGENDA.filter(agIsPast).sort((a,b) => agSortKey(a) > agSortKey(b) ? -1 : 1).slice(0, 6);
+  el.innerHTML = up.map(a => agRow(a, t)).join('')
+    + (past.length ? `<div class="ag-divider">${t.ag_past_h}</div>` + past.map(a => agRow(a, t)).join('') : '');
+}
+
+let AG_VIEW = 'list';
+let CAL_Y = new Date().getFullYear(), CAL_M = new Date().getMonth();
+function setAgView(v){
+  AG_VIEW = v;
+  document.getElementById('agenda-list').style.display = v === 'list' ? '' : 'none';
+  document.getElementById('agenda-cal').style.display  = v === 'cal'  ? '' : 'none';
+  document.getElementById('agv-list').classList.toggle('on', v === 'list');
+  document.getElementById('agv-cal').classList.toggle('on', v === 'cal');
+  if (v === 'cal') renderCal(I18N[LANG]);
+}
+function calShift(n){ CAL_M += n; while(CAL_M < 0){CAL_M += 12; CAL_Y--;} while(CAL_M > 11){CAL_M -= 12; CAL_Y++;} renderCal(I18N[LANG]); }
+function calYear(n){ CAL_Y += n; renderCal(I18N[LANG]); }
+function calGoto(m){ CAL_M = m; renderCal(I18N[LANG]); }
+function calToday(){ const n = new Date(); CAL_Y = n.getFullYear(); CAL_M = n.getMonth(); renderCal(I18N[LANG]); }
+function agInMonth(a, ym){ 
+  return a.date.slice(0,7) <= ym && (a.end || a.date).slice(0,7) >= ym;
+}
+function renderCal(t){
+  const el = document.getElementById('agenda-cal');
+  if (!el) return;
+  const todayIso = agTodayIso();
+  const ym = CAL_Y + '-' + String(CAL_M+1).padStart(2,'0');
+  const startDow = new Date(CAL_Y, CAL_M, 1).getDay();
+  const dim = new Date(CAL_Y, CAL_M+1, 0).getDate();
+  let cells = '';
+  for (let i = 0; i < startDow; i++) cells += '<div class="cal-day out"></div>';
+  for (let d = 1; d <= dim; d++){
+    const iso = ym + '-' + String(d).padStart(2,'0');
+    const evs = AGENDA.filter(a => a.date.length === 10 && iso >= a.date && iso <= (a.end || a.date));
+    cells += `<div class="cal-day${iso === todayIso ? ' today' : ''}${iso < todayIso ? ' gone' : ''}${evs.length ? ' has' : ''}"${evs.length ? ` title="${evs.map(e => e.t).join(' · ')}"` : ''}>
+      <b>${d}</b>${evs.length ? `<div class="dots">${evs.map(e => `<span class="dot${e.src==='ext' ? ' ext' : ''}"></span>`).join('')}</div>` : ''}</div>`;
+  }
+  const monthEvs = AGENDA.filter(a => agInMonth(a, ym)).sort((a,b) => agSortKey(a) < agSortKey(b) ? -1 : 1);
+  el.innerHTML = `
+    <div class="cal-head">
+      <button type="button" class="cal-nav" onclick="calShift(-1)" aria-label="previous month"><svg class="icon" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+      <div class="cal-title">${t.months[CAL_M]} ${CAL_Y}</div>
+      <button type="button" class="cal-nav" onclick="calShift(1)" aria-label="next month"><svg class="icon" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+      <button type="button" class="cal-today" onclick="calToday()">${t.ag_today}</button>
+    </div>
+    <div class="cal-months">
+      <button type="button" class="cal-nav sm" onclick="calYear(-1)" aria-label="previous year"><svg class="icon" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+      <span class="cal-ylabel">${CAL_Y}</span>
+      <button type="button" class="cal-nav sm" onclick="calYear(1)" aria-label="next year"><svg class="icon" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+      ${t.months_s.map((m,i) => `<button type="button" class="cal-mchip${i === CAL_M ? ' on' : ''}${AGENDA.some(a => agInMonth(a, CAL_Y + '-' + String(i+1).padStart(2,'0'))) ? ' has-ev' : ''}" onclick="calGoto(${i})">${m}</button>`).join('')}
+    </div>
+    <div class="cal-grid">${t.dow.map(d => `<div class="cal-dow">${d}</div>`).join('')}${cells}</div>
+    <div class="cal-list">${monthEvs.length ? monthEvs.map(a => agRow(a, t)).join('') : `<p class="cal-empty">${t.ag_empty}</p>`}</div>`;
 }
 
 /* ═══ i18n engine ═══ */
@@ -845,6 +1019,7 @@ function apply(){
     `<li><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>${m}</li>`).join('');
   renderSocial(t);
   renderAgenda(t);
+  if (AG_VIEW === 'cal') renderCal(t); 
   buildRadar(); 
   document.getElementById('btn-lo').classList.toggle('on', LANG==='lo');
   document.getElementById('btn-en').classList.toggle('on', LANG==='en');
@@ -852,15 +1027,22 @@ function apply(){
 function setLang(l){ LANG = l; localStorage.setItem('lm_lang', l); apply(); }
 
 /* ═══ news + video render ═══ */
+function newsDate(d, t){ 
+  if (!d) return '';
+  const [y, m, dd] = d.split('-');
+  return LANG==='lo' ? `${+dd} ${t.months[+m-1]} ${y}` : `${t.months[+m-1]} ${+dd}, ${y}`;
+}
 function renderSocial(t){
-  document.getElementById('news-grid').innerHTML = SOCIAL.news.map(n => `
+  
+  const newsSorted = [...SOCIAL.news].sort((a,b) => (b.date||'0000').localeCompare(a.date||'0000'));
+  document.getElementById('news-grid').innerHTML = newsSorted.map(n => `
     <div class="card news-card reveal in">
       ${n.sample ? `<span class="sample-tag">${t.sample}</span>` : ''}
       ${n.img
         ? `<div class="news-cover has-img" style="background-image:url('${n.img}')"></div>`
         : `<div class="news-cover"><svg class="icon" viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0V9"/><path d="M12 7h6M12 11h6M12 15h6M8 7h.01M8 11h.01M8 15h.01"/></svg></div>`}
       <div class="news-body">
-        ${n.date ? `<div class="news-date">${n.date}</div>` : ''}
+        ${n.cat || n.date ? `<div class="news-meta">${n.cat ? `<span class="news-cat ${n.cat}">${t['nc_'+n.cat] || ''}</span>` : ''}${n.date ? `<span class="news-date">${newsDate(n.date, t)}</span>` : ''}</div>` : ''}
         <h3>${LANG==='lo' ? n.lo : n.en}</h3>
         <p>${LANG==='lo' ? n.lo_p : n.en_p}</p>
         <a class="news-link" href="${n.url || (SOCIAL.facebookPage || '#news')}" ${n.url ? 'target="_blank" rel="noopener"' : ''}>
