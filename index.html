@@ -82,7 +82,7 @@ header.scrolled{box-shadow:0 6px 24px rgba(10,20,40,.10)}
 .menu{display:flex;gap:15px;margin-left:6px;font-size:13px;font-weight:600;color:var(--muted)}
 .menu a{white-space:nowrap}
 .menu a:hover{color:var(--blue)}
-@media(max-width:1240px){.menu{display:none}}
+@media(max-width:1023px){.menu{display:none}.burger{display:flex}}
 .nav-tools{margin-left:auto;display:flex;gap:8px;align-items:center}
 .lang{display:flex;border:1.5px solid var(--line);border-radius:11px;overflow:hidden}
 .lang button{display:flex;align-items:center;gap:6px;font-family:inherit;font-size:12px;font-weight:700;color:var(--muted);background:transparent;border:0;padding:7px 11px;cursor:pointer}
@@ -93,6 +93,33 @@ header.scrolled{box-shadow:0 6px 24px rgba(10,20,40,.10)}
 .theme-btn .icon{width:18px;height:18px}
 .nav-cta{display:flex;gap:8px}
 .nav-cta .btn{padding:9px 16px;font-size:13px}
+
+.brand span{white-space:nowrap}
+.menu{gap:2px}
+.menu a{padding:8px 11px;border-radius:9px}
+.menu a:hover{background:var(--soft)}
+.mdd{position:relative}
+.mdd-btn{display:flex;align-items:center;gap:5px;background:none;border:0;font:inherit;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;padding:8px 11px;border-radius:9px;white-space:nowrap}
+.mdd-btn:hover{color:var(--blue);background:var(--soft)}
+.mdd-ch{width:14px;height:14px;transition:transform .18s}
+.mdd.open .mdd-ch{transform:rotate(180deg)}
+.mdd-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:215px;background:var(--body);border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 44px rgba(10,20,40,.16);padding:8px;display:none;z-index:60}
+.mdd.open .mdd-menu{display:block}
+@media(hover:hover){.mdd:hover .mdd-menu,.mdd:focus-within .mdd-menu{display:block}}
+.mdd-menu a{display:block;padding:10px 13px;border-radius:9px;white-space:nowrap;font-weight:600;color:var(--muted)}
+.mdd-menu a:hover{background:var(--soft);color:var(--blue)}
+.nav-cta .btn{white-space:nowrap}
+.burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;background:none;border:1.5px solid var(--line);border-radius:11px;color:var(--muted);cursor:pointer;padding:0}
+.burger .icon{width:20px;height:20px}
+.mnav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--body);border-bottom:1px solid var(--line);box-shadow:0 18px 40px rgba(10,20,40,.14);padding:10px 18px 16px;z-index:55}
+.mnav.open{display:block}
+.mnav a{display:block;padding:13px 10px;font-size:14.5px;font-weight:700;color:var(--muted);border-radius:10px}
+.mnav a:hover{background:var(--soft);color:var(--blue)}
+.mnav-sep{height:1px;background:var(--line);margin:8px 0}
+.mnav-cta{display:flex;gap:10px;padding:6px 4px 2px}
+.mnav-cta .btn{flex:1;justify-content:center;text-align:center;white-space:nowrap}
+@media(min-width:1024px){.mnav{display:none!important}}
+@media(max-width:1023px){.burger{display:flex}}
 
 /* ── hero ── */
 .hero{position:relative;color:#fff;padding:130px 0 120px;background:#0E1B33}
@@ -345,7 +372,8 @@ footer .icon{width:16px;height:16px;margin-top:5px}
 
 @media(max-width:480px){
   .brand small{display:none}
-  .brand span{font-size:12px;max-width:130px}
+  .brand span{font-size:12px;max-width:130px;overflow:hidden;text-overflow:ellipsis}
+  .lang svg{display:none}
   .brand img{width:32px;height:32px}
   .lang button{padding:6px 8px}
   .nav{padding:10px 12px;gap:7px}
@@ -364,14 +392,19 @@ footer .icon{width:16px;height:16px;margin-top:5px}
       <span data-i="brand"></span>
     </a>
     <nav class="menu">
+      <a href="#whatwedo" data-i="n_do"></a>
+      <a href="#news" data-i="n_news"></a>
       <a href="#membersys" data-i="n_member"></a>
       <a href="https://app.laomsme.org/health" target="_blank" rel="noopener" data-i="n_health"></a>
-      <a href="#whatwedo" data-i="n_do"></a>
-      <a href="#about" data-i="n_about"></a>
-      <a href="#committee" data-i="n_committee"></a>
-      <a href="#news" data-i="n_news"></a>
-      <a href="#partners" data-i="n_partner"></a>
-      <a href="#contact" data-i="n_contact"></a>
+      <div class="mdd">
+        <button class="mdd-btn" type="button" aria-haspopup="true" aria-expanded="false"><span data-i="n_aboutGrp"></span><svg class="icon mdd-ch" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="mdd-menu" role="menu">
+          <a href="#about" data-i="n_about"></a>
+          <a href="#committee" data-i="n_committee"></a>
+          <a href="#partners" data-i="n_partner"></a>
+          <a href="#contact" data-i="n_contact"></a>
+        </div>
+      </div>
     </nav>
     <div class="nav-tools">
       <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">
@@ -392,6 +425,23 @@ footer .icon{width:16px;height:16px;margin-top:5px}
           EN
         </button>
       </div>
+      <button class="burger" id="burger" type="button" aria-label="ເປີດເມນູ" aria-expanded="false" onclick="toggleMnav()"><svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+  <div class="mnav" id="mnav">
+    <a href="#whatwedo" data-i="n_do" onclick="closeMnav()"></a>
+    <a href="#news" data-i="n_news" onclick="closeMnav()"></a>
+    <a href="#membersys" data-i="n_member" onclick="closeMnav()"></a>
+    <a href="https://app.laomsme.org/health" target="_blank" rel="noopener" data-i="n_health" onclick="closeMnav()"></a>
+    <div class="mnav-sep"></div>
+    <a href="#about" data-i="n_about" onclick="closeMnav()"></a>
+    <a href="#committee" data-i="n_committee" onclick="closeMnav()"></a>
+    <a href="#partners" data-i="n_partner" onclick="closeMnav()"></a>
+    <a href="#contact" data-i="n_contact" onclick="closeMnav()"></a>
+    <div class="mnav-sep"></div>
+    <div class="mnav-cta">
+      <a class="btn btn-line" href="https://app.laomsme.org/signin" target="_blank" rel="noopener" data-i="login" onclick="closeMnav()"></a>
+      <a class="btn btn-fill" href="https://app.laomsme.org/register" target="_blank" rel="noopener" data-i="signup" onclick="closeMnav()"></a>
     </div>
   </div>
 </header>
@@ -779,7 +829,8 @@ const I18N = {
 lo:{
   draft:"ສະບັບຮ່າງ · ຍັງບໍ່ແມ່ນເວັບທາງການ",
   brand:"ສະມາຄົມສົ່ງເສີມ MSME ລາວ<small>Lao MSME Association</small>",
-  n_member:"ລະບົບສະມາຊິກ", n_health:"ກວດສຸຂະພາບທຸລະກິດ", n_do:"ສິ່ງທີ່ເຮົາເຮັດ", n_about:"ກ່ຽວກັບສະມາຄົມ", n_committee:"ຄະນະບໍລິຫານ", n_news:"ຂ່າວສານ", n_partner:"ຄູ່ຮ່ວມມື", n_contact:"ຕິດຕໍ່",
+  n_member:"ລະບົບສະມາຊິກ", n_health:"ກວດສຸຂະພາບທຸລະກິດ", n_do:"ສິ່ງທີ່ເຮົາເຮັດ", n_about:"ກ່ຽວກັບສະມາຄົມ",
+n_aboutGrp:"ກ່ຽວກັບ", n_committee:"ຄະນະບໍລິຫານ", n_news:"ຂ່າວສານ", n_partner:"ຄູ່ຮ່ວມມື", n_contact:"ຕິດຕໍ່",
   cm_k:"ຄະນະບໍລິຫານ", cm_h:"ຄະນະບໍລິຫານສະມາຄົມ ຊຸດປັດຈຸບັນ", cm_sub:"ຄະນະນຳ ແລະ ກຳມະການ ທີ່ຂັບເຄື່ອນວຽກງານຂອງສະມາຄົມ",
   ag_k:"ປະຕິທິນກິດຈະກຳ", ag_h:"ງານທີ່ກຳລັງ<em class='hl'>ຈະມາເຖິງ</em>", ag_sub:"ໝາຍປະຕິທິນໄວ້ ແລ້ວມາພົບກັນ", ag_soon:"ໄວໆນີ້", ag_more:"ລາຍລະອຽດ",
   ag_vlist:"ລາຍການ", ag_vcal:"ປະຕິທິນ", ag_done:"ຜ່ານມາແລ້ວ", ag_ext:"ງານເຄືອຂ່າຍ", ag_today:"ມື້ນີ້", ag_empty:"ບໍ່ມີງານໃນເດືອນນີ້", ag_past_h:"ງານທີ່ຜ່ານມາ",
@@ -845,7 +896,8 @@ lo:{
 en:{
   draft:"Draft · not the official website yet",
   brand:"Lao MSME Association<small>ສະມາຄົມສົ່ງເສີມ MSME ລາວ</small>",
-  n_member:"Membership", n_health:"Health check", n_do:"What we do", n_about:"About", n_committee:"Committee", n_news:"News", n_partner:"Partners", n_contact:"Contact",
+  n_member:"Membership", n_health:"Health check", n_do:"What we do", n_about:"About",
+n_aboutGrp:"About", n_committee:"Committee", n_news:"News", n_partner:"Partners", n_contact:"Contact",
   cm_k:"Executive Committee", cm_h:"Meet the current committee", cm_sub:"The leadership and committee members driving the association's work",
   ag_k:"Event calendar", ag_h:"<em class='hl'>Upcoming</em> events", ag_sub:"Mark your calendar and join us", ag_soon:"Coming soon", ag_more:"Details",
   ag_vlist:"List", ag_vcal:"Calendar", ag_done:"Past", ag_ext:"Network event", ag_today:"Today", ag_empty:"No events this month", ag_past_h:"Past events",
@@ -1243,6 +1295,14 @@ setStagger();
 checkReveals();
 setTimeout(checkReveals, 400); 
 
+function toggleMnav(){var m=document.getElementById('mnav'),b=document.getElementById('burger');var o=m.classList.toggle('open');if(b)b.setAttribute('aria-expanded',o?'true':'false');}
+function closeMnav(){var m=document.getElementById('mnav'),b=document.getElementById('burger');if(m)m.classList.remove('open');if(b)b.setAttribute('aria-expanded','false');}
+(function(){var dd=document.querySelector('.mdd');if(!dd)return;var btn=dd.querySelector('.mdd-btn');
+btn.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false');});
+document.addEventListener('click',function(){dd.classList.remove('open');btn.setAttribute('aria-expanded','false');});
+Array.prototype.forEach.call(dd.querySelectorAll('.mdd-menu a'),function(a){a.addEventListener('click',function(){dd.classList.remove('open');});});
+})();
+
 (function(){
   try{
     fetch('https://app.laomsme.org/api/auth/session',{credentials:'include'})
@@ -1254,7 +1314,7 @@ setTimeout(checkReveals, 400);
         var em = (s.user.email || '');
         var letter = em ? em.charAt(0).toUpperCase() : 'S';
         var label = (typeof LANG !== 'undefined' && LANG === 'en') ? 'Member area' : 'ໜ້າສະມາຊິກ';
-        cta.innerHTML = '<a class="btn btn-fill" href="https://app.laomsme.org/dashboard" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px">'
+        cta.innerHTML = '<a class="btn btn-fill" href="https://app.laomsme.org/dashboard" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;white-space:nowrap">'
           + '<span style="width:24px;height:24px;border-radius:50%;background:#fff;color:#1C5FC0;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex:none">' + letter + '</span>'
           + '<span>' + label + '</span></a>';
       })
