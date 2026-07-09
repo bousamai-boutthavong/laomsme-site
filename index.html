@@ -192,7 +192,7 @@ header.scrolled{box-shadow:0 6px 24px rgba(10,20,40,.10)}
 .stand-words{margin-top:48px;display:flex;flex-wrap:wrap;column-gap:26px;row-gap:4px;align-items:baseline}
 .stand-words .word{font-size:clamp(36px,4.8vw,62px);font-weight:800;line-height:1.3;background:linear-gradient(105deg,var(--blue) 10%,#6FA5EF 55%,#9CCBFF 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .stand-words .dot{font-size:clamp(28px,3.4vw,42px);color:var(--faint);font-weight:800}
-.stand-en{margin-top:18px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+.stand-en{margin-top:18px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 .prows{margin-top:72px;border-top:1px solid var(--line)}
 .prow{display:grid;grid-template-columns:96px 230px 1fr;gap:26px;align-items:baseline;padding:34px 6px;border-bottom:1px solid var(--line)}
 .prow .gnum{font-size:46px;font-weight:800;line-height:1;color:transparent;-webkit-text-stroke:1.3px var(--faint);opacity:.75}
@@ -302,7 +302,7 @@ header.scrolled{box-shadow:0 6px 24px rgba(10,20,40,.10)}
 .sample-tag{position:absolute;top:12px;right:12px;font-size:10.5px;font-weight:700;color:var(--gold);background:#FBF1DE;border-radius:8px;padding:3px 9px}
 
 /* ── invite ── */
-.invite{position:relative;color:#fff;border-radius:24px;overflow:hidden;padding:60px 52px}
+.invite{position:relative;color:#fff;border-radius:24px;overflow:hidden;padding:60px 52px;background:#0E1B33}
 .invite::before{content:"";position:absolute;inset:0;background:url('lm_group.jpg') center/cover}
 .invite::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(9,20,42,.9),rgba(28,95,192,.6))}
 .invite>*{position:relative;z-index:2}
@@ -326,7 +326,7 @@ html[data-theme="dark"] .logo-wall.color .logo-tile img{filter:none}
 .logo-tile.ev img{max-height:96px;max-width:86%}
 
 .tier{margin-top:36px;font-size:12.5px;font-weight:800;letter-spacing:.24em;color:var(--gold)}
-.tier.vip-t{color:var(--faint)}
+.tier.vip-t{color:var(--muted)}
 .logo-wall.vvipw{grid-template-columns:repeat(4,1fr);margin-top:14px}
 .logo-tile.lg{height:136px}
 .logo-tile.lg img{max-height:82px;max-width:78%}
@@ -1079,7 +1079,7 @@ function apply(){
   document.getElementById('btn-lo').classList.toggle('on', LANG==='lo');
   document.getElementById('btn-en').classList.toggle('on', LANG==='en');
 }
-function setLang(l){ LANG = l; localStorage.setItem('lm_lang', l); apply(); }
+function setLang(l){ LANG = l; localStorage.setItem('lm_lang', l); apply(); renderSessChip(); }
 
 /* ═══ news + video render ═══ */
 function newsDate(d, t){ 
@@ -1293,6 +1293,7 @@ var tkX = 0, tkW = 0;
 apply();
 setStagger();
 checkReveals();
+setInterval(checkReveals, 800); 
 setTimeout(checkReveals, 400); 
 
 function toggleMnav(){var m=document.getElementById('mnav'),b=document.getElementById('burger');var o=m.classList.toggle('open');if(b)b.setAttribute('aria-expanded',o?'true':'false');}
@@ -1303,20 +1304,26 @@ document.addEventListener('click',function(){dd.classList.remove('open');btn.set
 Array.prototype.forEach.call(dd.querySelectorAll('.mdd-menu a'),function(a){a.addEventListener('click',function(){dd.classList.remove('open');});});
 })();
 
+var SESS_USER = null;
+function renderSessChip(){
+  if(!SESS_USER) return;
+  var cta = document.querySelector('.nav-cta');
+  if(!cta) return;
+  var em = (SESS_USER.email || '');
+  var letter = em ? em.charAt(0).toUpperCase() : 'S';
+  var label = (typeof LANG !== 'undefined' && LANG === 'en') ? 'Member area' : 'ໜ້າສະມາຊິກ';
+  cta.innerHTML = '<a class="btn btn-fill" href="https://app.laomsme.org/dashboard" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;white-space:nowrap">'
+    + '<span style="width:24px;height:24px;border-radius:50%;background:#fff;color:#1C5FC0;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex:none">' + letter + '</span>'
+    + '<span>' + label + '</span></a>';
+}
 (function(){
   try{
     fetch('https://app.laomsme.org/api/auth/session',{credentials:'include'})
       .then(function(r){ return r.ok ? r.json() : null; })
       .then(function(s){
         if(!s || !s.user) return;
-        var cta = document.querySelector('.nav-cta');
-        if(!cta) return;
-        var em = (s.user.email || '');
-        var letter = em ? em.charAt(0).toUpperCase() : 'S';
-        var label = (typeof LANG !== 'undefined' && LANG === 'en') ? 'Member area' : 'ໜ້າສະມາຊິກ';
-        cta.innerHTML = '<a class="btn btn-fill" href="https://app.laomsme.org/dashboard" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;white-space:nowrap">'
-          + '<span style="width:24px;height:24px;border-radius:50%;background:#fff;color:#1C5FC0;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex:none">' + letter + '</span>'
-          + '<span>' + label + '</span></a>';
+        SESS_USER = s.user;
+        renderSessChip();
       })
       .catch(function(){});
   }catch(e){}
